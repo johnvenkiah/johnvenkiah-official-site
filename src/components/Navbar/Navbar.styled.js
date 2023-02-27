@@ -43,10 +43,14 @@ export const NavMenu = styled.div`
   align-items: center;
   width: 100vw;
   white-space: nowrap;
+  backdrop-filter: blur(10px);
+  background-color: rgba(25, 50, 50, 0.5);
   @media screen and (max-width: 768px) {
+    transition: transform 0.5s ease-in-out;
     transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
     height: 100vh;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    padding-top: 85px;
   }
 `;
