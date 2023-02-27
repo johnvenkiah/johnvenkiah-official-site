@@ -1,24 +1,39 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
+import { ThemeProvider } from 'styled-components';
 import './App.css';
+import Navbar from './components/Navbar';
+import Home from './pages';
+import About from './pages/about';
+import Contact from './pages/contact';
+import Music from './pages/music';
+import Videos from './pages/videos';
+import Live from './pages/live';
+import { theme } from './components/theme';
+import { GlobalStyles } from './components/global';
+import { Burger } from './components';
 
 function App() {
+  const [open, setOpen] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <Router>
+        <div>
+          <Burger open={open} setOpen={setOpen} />
+          <Navbar open={open} setOpen={setOpen} />
+        </div>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/music" element={<Music />} />
+          <Route path="/videos" element={<Videos />} />
+          <Route path="/live" element={<Live />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 
