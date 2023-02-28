@@ -1,13 +1,14 @@
 // Burger.styled.js
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const StyledBurger = styled.button`
   display: none;
 
   @media screen and (max-width: 768px) {
     position: absolute;
-    top: 5%;
-    left: 2rem;
+    top: 27px;
+    right: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -33,4 +34,14 @@ export const StyledBurger = styled.button`
       transform-origin: 1px;
     }
   }
+`;
+
+export const MainLogo = styled(Link)`
+  position: absolute;
+  top: 0.5rem;
+  left: 1.5rem;
+  display: flex;
+  color: ${({ theme }) => theme.primaryLight};
+  text-decoration: none;
+  z-index: 10;
 `;

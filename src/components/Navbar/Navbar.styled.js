@@ -7,7 +7,7 @@ export const Nav = styled.nav`
   height: 85px;
   display: flex;
   justify-content: space-between;
-  padding: 0.2rem calc((100vw - 1000px) / 2);
+  /* padding: 0.2rem calc((100vw - 1000px) / 2); */
   z-index: 12;
 `;
 
@@ -46,8 +46,9 @@ export const NavMenu = styled.div`
   backdrop-filter: blur(10px);
   background-color: rgba(25, 50, 50, 0.5);
   @media screen and (max-width: 768px) {
-    transition: transform 0.5s ease-in-out;
-    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(100%)')};
+    opacity: ${({ open }) => (open ? '1' : '0')};
     height: 100vh;
     flex-direction: column;
     justify-content: center;
