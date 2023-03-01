@@ -26,14 +26,6 @@ const Navbar = ({ open, setOpen }) => {
         </MainLogo>
         <NavMenu open={open}>
           <ul>{menuMarkup}</ul>
-          {/* <NavLink to="/" onClick={() => setOpen(!open)}>
-            Home
-          </NavLink>
-          <NavLink to="/music">Music</NavLink>
-          <NavLink to="/videos">Videos</NavLink>
-          <NavLink to="/live">Live</NavLink>
-          <NavLink to="/about">About</NavLink>
-          <NavLink to="/contact">Contact</NavLink> */}
         </NavMenu>
       </Nav>
     </>

@@ -6,7 +6,7 @@ export const StyledBurger = styled.button`
   display: none;
 
   @media screen and (max-width: 768px) {
-    position: absolute;
+    position: fixed;
     top: 27px;
     right: 2rem;
     display: flex;

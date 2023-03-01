@@ -6,13 +6,14 @@ import { GlobalStyles } from './global';
 import { theme } from './theme';
 import './App.css';
 import Navbar from './components/Navbar';
-import Home from './pages';
+import Home from './pages/Home/Home';
 import About from './pages/about';
 import Contact from './pages/contact';
 import Music from './pages/music';
 import Videos from './pages/videos';
 import Live from './pages/live';
 import { Burger } from './components';
+import johnMopaSinging from './images/mopa_singing_portrait.png';
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -27,14 +28,17 @@ function App() {
           <Burger open={open} setOpen={setOpen} />
           <Navbar open={open} setOpen={setOpen} />
         </div>
-        <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/music" element={<Music />} />
-          <Route path="/videos" element={<Videos />} />
-          <Route path="/live" element={<Live />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <img src={johnMopaSinging} alt="" className="background-image" />
+        <div className="mainContainer">
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/music" element={<Music />} />
+            <Route path="/videos" element={<Videos />} />
+            <Route path="/live" element={<Live />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
       </Router>
     </ThemeProvider>
   );
