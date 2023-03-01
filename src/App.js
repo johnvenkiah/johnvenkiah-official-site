@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
+import { useOnClickOutside } from './hooks';
+import { GlobalStyles } from './global';
+import { theme } from './theme';
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './pages';
@@ -10,14 +12,11 @@ import Contact from './pages/contact';
 import Music from './pages/music';
 import Videos from './pages/videos';
 import Live from './pages/live';
-import { theme } from './components/theme';
-import { GlobalStyles } from './components/global';
 import { Burger } from './components';
-import { useOnClickOutside } from './hooks';
 
 function App() {
   const [open, setOpen] = useState(false);
-  const node = React.useRef();
+  const node = useRef();
   useOnClickOutside(node, () => setOpen(false));
 
   return (

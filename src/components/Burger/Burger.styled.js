@@ -26,7 +26,7 @@ export const StyledBurger = styled.button`
 
     div {
       width: 2rem;
-      height: 0.25rem;
+      height: 0.15rem;
       background: ${({ theme }) => theme.primaryLight};
       border-radius: 10px;
       transition: all 0.5s ease-in-out;
@@ -53,7 +53,7 @@ export const StyledBurger = styled.button`
 export const MainLogo = styled(Link)`
   position: absolute;
   top: 0.5rem;
-  left: 1.5rem;
+  left: 1rem;
   display: flex;
   color: ${({ theme }) => theme.primaryLight};
   text-decoration: none;
