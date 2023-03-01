@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import './App.css';
 import Navbar from './components/Navbar';
@@ -13,14 +13,18 @@ import Live from './pages/live';
 import { theme } from './components/theme';
 import { GlobalStyles } from './components/global';
 import { Burger } from './components';
+import { useOnClickOutside } from './hooks';
 
 function App() {
   const [open, setOpen] = useState(false);
+  const node = React.useRef();
+  useOnClickOutside(node, () => setOpen(false));
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Router>
-        <div>
+        <div ref={node}>
           <Burger open={open} setOpen={setOpen} />
           <Navbar open={open} setOpen={setOpen} />
         </div>
