@@ -26,7 +26,7 @@ export const StyledBurger = styled.button`
 
     div {
       width: 2rem;
-      height: 0.15rem;
+      height: 0.12rem;
       background: ${({ theme }) => theme.primaryLight};
       border-radius: 10px;
       transition: all 0.5s ease-in-out;
