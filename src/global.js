@@ -13,16 +13,19 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.primaryDark};
     color: ${({ theme }) => theme.primaryLight};
     display: flex;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     height: 100vh;
     text-rendering: optimizeLegibility;
   }
 
   h1 {
-    font-family: 'Bebas Neue', cursive;
-    text-transform: uppercase;
-    font-size: 2.2rem;
+    font-size: 1.9rem;
     margin: 1rem 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
   }
 
   h1, h2, h3, h4, h5, h6, p, span, a, li {

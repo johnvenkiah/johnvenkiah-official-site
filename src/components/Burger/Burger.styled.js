@@ -18,7 +18,7 @@ export const StyledBurger = styled.button`
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 10;
+    z-index: 15;
 
     &:focus {
       outline: none;
@@ -57,5 +57,5 @@ export const MainLogo = styled(Link)`
   display: flex;
   color: ${({ theme }) => theme.primaryLight};
   text-decoration: none;
-  z-index: 10;
+  z-index: 15;
 `;

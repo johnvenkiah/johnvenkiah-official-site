@@ -7,11 +7,12 @@ export const Nav = styled.nav`
   display: flex;
   position: fixed;
   justify-content: space-between;
-  /* z-index: 12; */
+  z-index: 12;
 `;
 
 export const NavLink = styled(Link)`
-  color: #808080;
+  color: #989898;
+  font-weight: 600;
   display: flex;
   align-items: center;
   text-decoration: none;
