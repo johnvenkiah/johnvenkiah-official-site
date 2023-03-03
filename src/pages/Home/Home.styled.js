@@ -11,11 +11,32 @@ export const MiddleFadeBar = styled.div`
   position: relative;
   top: 75vh;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-  h2 {
+
+  div {
+    cursor: pointer;
+    width: fit-content;
     margin: 0 auto;
-  }
-  svg {
-    font-size: 1.5rem;
+
+    h2 {
+      transition: all 0.3s ease-in-out;
+      margin: 0 auto;
+    }
+
+    svg {
+      transition: all 0.3s ease-in-out;
+      font-size: 1.5rem;
+      border-radius: 50%;
+    }
+
+    &:hover {
+      h2 {
+        text-shadow: 0 0 10px #ffb337;
+      }
+      svg {
+        filter: drop-shadow(0px 0px 5px #ffb337);
+        -webkit-filter: drop-shadow(0px 0px 5px #ffb337);
+      }
+    }
   }
 `;
 
@@ -28,17 +49,35 @@ export const ContentsWrapper = styled.div`
 `;
 
 export const ToTop = styled.div`
+  cursor: pointer;
+  width: fit-content;
   margin: 0 auto;
   text-align: center;
   font-family: 'Barlow Condensed', sans-serif;
   text-transform: uppercase;
   font-size: 1.5rem;
+  transition: all 0.2s ease-in-out;
+  transform: scale(1);
 
   p {
     margin: 0;
     padding-bottom: 1rem;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
   }
   svg {
     font-size: 1.5rem;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    transform: scale(1.03);
+    p {
+      text-shadow: 0 0 10px #ffb337;
+    }
+    svg {
+      filter: drop-shadow(0px 0px 5px #ffb337);
+      -webkit-filter: drop-shadow(0px 0px 5px #ffb337);
+    }
   }
 `;

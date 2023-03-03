@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Nav = styled.nav`
   background: linear-gradient(black, transparent);
-  height: 85px;
+  height: 75px;
   display: flex;
   position: fixed;
   justify-content: space-between;
@@ -11,7 +11,7 @@ export const Nav = styled.nav`
 `;
 
 export const NavLink = styled(Link)`
-  color: #989898;
+  color: #fff;
   font-weight: 600;
   display: flex;
   align-items: center;
@@ -20,7 +20,7 @@ export const NavLink = styled(Link)`
   height: 100%;
   cursor: pointer;
   &.active {
-    color: #fff;
+    color: #ffb337;
   }
 `;
 
@@ -30,8 +30,10 @@ export const NavMenu = styled.div`
   justify-content: end;
   white-space: nowrap;
   width: 100vw;
-  background-color: rgba(25, 50, 50, 0.5);
-  backdrop-filter: blur(10px);
+  @media screen and (max-width: 768px) {
+    backdrop-filter: blur(10px);
+    background-color: rgba(25, 50, 50, 0.5);
+  }
 
   ul {
     display: flex;
