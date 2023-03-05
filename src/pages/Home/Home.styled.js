@@ -48,10 +48,11 @@ export const ContentsWrapper = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
 `;
 
-export const ToTop = styled.div`
+export const ScrollElement = styled.div`
   cursor: pointer;
   width: fit-content;
   margin: 0 auto;
+  padding-bottom: 1rem;
   text-align: center;
   font-family: 'Barlow Condensed', sans-serif;
   text-transform: uppercase;
@@ -59,9 +60,11 @@ export const ToTop = styled.div`
   transition: all 0.2s ease-in-out;
   transform: scale(1);
 
-  p {
+  p,
+  h2 {
+    font-size: 24px;
     margin: 0;
-    padding-bottom: 1rem;
+    padding: 0 0;
     font-weight: 600;
     transition: all 0.2s ease-in-out;
   }

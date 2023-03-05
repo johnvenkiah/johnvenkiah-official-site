@@ -1,28 +1,22 @@
 import React from 'react';
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
-import { ContentsWrapper, MiddleFadeBar, ToTop } from './Home.styled';
+import { ContentsWrapper, MiddleFadeBar, ScrollElement } from './Home.styled';
 
 export default function Home() {
-  const handleClick = () => {
-    let height = window.innerHeight - 75;
+  const ScrollHandler = (pix) => {
     window.scrollTo({
-      top: height,
+      top: pix,
       behavior: 'smooth',
     });
   };
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-  };
+
   return (
     <div>
       <MiddleFadeBar>
-        <div onClick={handleClick}>
+        <ScrollElement onClick={() => ScrollHandler(window.innerHeight - 75)}>
           <h2>Home</h2>
           <IoIosArrowDown />
-        </div>
+        </ScrollElement>
       </MiddleFadeBar>
       <ContentsWrapper>
         <p>
@@ -65,10 +59,10 @@ export default function Home() {
           facilisi. Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
           facilisi. Nulla facilisi.
         </p>
-        <ToTop onClick={scrollToTop}>
+        <ScrollElement onClick={() => ScrollHandler(0)}>
           <IoIosArrowUp />
           <p>To top</p>
-        </ToTop>
+        </ScrollElement>
       </ContentsWrapper>
     </div>
   );
