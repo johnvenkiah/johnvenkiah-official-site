@@ -1,9 +1,12 @@
 import React from 'react';
 
-export default function Videos() {
+export default function Developer() {
   return (
     <div>
-      <p>These videos will also blow your mind.</p>
+      <p>
+        This is the Developer Page. Here are some of my portfolio projects and a
+        sort of resume, which you might be able to download too.
+      </p>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod
         tincidunt nisl, eu aliquam nisl. Nulla facilisi. Nulla facilisi. Nulla

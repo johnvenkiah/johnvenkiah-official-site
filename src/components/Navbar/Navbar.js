@@ -9,6 +9,7 @@ const Navbar = ({ open, setOpen }) => {
     '/music': 'Music',
     '/videos': 'Videos',
     '/live': 'Live',
+    '/developer': 'Developer',
     '/about': 'About',
     '/contact': 'Contact/Press',
   };
