@@ -17,6 +17,7 @@ import Videos from './pages/videos';
 import Live from './pages/live';
 import Developer from './pages/developer';
 import johnMopaSinging from './images/mopa_singing_portrait.png';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -42,6 +43,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Router>
+        <ScrollToTop />
         <div ref={node}>
           <Burger open={open} setOpen={setOpen} />
           <Navbar open={open} setOpen={setOpen} />
