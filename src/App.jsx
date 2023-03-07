@@ -7,8 +7,7 @@ import { GlobalStyles } from './global';
 import { theme } from './theme';
 import './App.css';
 import { ContentsWrapper, MiddleFadeBar, ScrollElement } from './App.styled';
-import Navbar from './components/Navbar';
-import { Burger } from './components';
+import { Navbar, Burger } from './components';
 import Home from './pages/Home/Home';
 import About from './pages/about';
 import Contact from './pages/contact';
@@ -18,6 +17,8 @@ import Live from './pages/live';
 import Developer from './pages/developer';
 import johnMopaSinging from './images/mopa_singing_portrait.png';
 import ScrollToTop from './components/ScrollToTop';
+import ShowModal from './components/ShowModal';
+import Heading from './components/Heading';
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -31,19 +32,12 @@ function App() {
     });
   };
 
-  const returnPageTitle = () => {
-    var path = window.location.pathname;
-    path === '/' ? (path = 'home') : (path = path.slice(1));
-    path = path.charAt(0).toUpperCase() + path.slice(1);
-    return path;
-  };
-
-  const path = returnPageTitle();
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Router>
         <ScrollToTop />
+        <ShowModal open={open} setOpen={setOpen} />
         <div ref={node}>
           <Burger open={open} setOpen={setOpen} />
           <Navbar open={open} setOpen={setOpen} />
@@ -55,7 +49,7 @@ function App() {
               <ScrollElement
                 onClick={() => ScrollHandler(window.innerHeight - 75)}
               >
-                <h2>{path}</h2>
+                <Heading />
                 <IoIosArrowDown />
               </ScrollElement>
             </MiddleFadeBar>
