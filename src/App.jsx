@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
-import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+import { IoIosArrowUp } from 'react-icons/io';
 import { useOnClickOutside } from './hooks';
 import { GlobalStyles } from './global';
 import { theme } from './theme';
@@ -15,10 +15,9 @@ import Music from './pages/music';
 import Videos from './pages/videos';
 import Live from './pages/live';
 import Developer from './pages/developer';
-import johnMopaSinging from './images/mopa_singing_portrait.png';
 import ScrollToTop from './components/ScrollToTop';
-import ShowModal from './components/ShowModal';
 import Heading from './components/Heading';
+import Background from './components/Background';
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -37,12 +36,11 @@ function App() {
       <GlobalStyles />
       <Router>
         <ScrollToTop />
-        <ShowModal open={open} setOpen={setOpen} />
         <div ref={node}>
           <Burger open={open} setOpen={setOpen} />
           <Navbar open={open} setOpen={setOpen} />
         </div>
-        <img src={johnMopaSinging} alt="" className="background-image" />
+        <Background />
         <div className="mainContainer">
           <div>
             <MiddleFadeBar>
@@ -50,7 +48,6 @@ function App() {
                 onClick={() => ScrollHandler(window.innerHeight - 75)}
               >
                 <Heading />
-                <IoIosArrowDown />
               </ScrollElement>
             </MiddleFadeBar>
             <ContentsWrapper>
