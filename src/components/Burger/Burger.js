@@ -4,9 +4,12 @@ import { bool, func } from 'prop-types';
 import { StyledBurger } from './Burger.styled';
 
 const Burger = ({ open, setOpen }) => {
-  open
+  open && window.innerWidth <= 768
     ? (document.body.style.overflow = 'hidden')
     : (document.body.style.overflow = 'auto');
+  if (window.innerWidth > 768) {
+    return null;
+  }
   return (
     <StyledBurger open={open} onClick={() => setOpen(!open)}>
       <div />

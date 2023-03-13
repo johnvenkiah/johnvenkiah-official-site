@@ -2,9 +2,9 @@ import { IntroModal } from './ShowModal.styled';
 import { bool, func } from 'prop-types';
 
 const ShowModal = ({ open, setOpen }) => {
-  open
-    ? (document.body.style.overflow = 'auto')
-    : (document.body.style.overflow = 'hidden');
+  // open
+  //   ? (document.body.style.overflow = 'auto')
+  //   : (document.body.style.overflow = 'hidden');
   return (
     <IntroModal open={open} onClick={() => setOpen(!open)}>
       <p>Welcome to the website of</p>

@@ -21,6 +21,7 @@ export const NavLink = styled(Link)`
   cursor: pointer;
   &.active {
     color: #ffb337;
+    pointer-events: none;
   }
 `;
 
@@ -47,6 +48,13 @@ export const NavMenu = styled.div`
 
     li {
       margin: 0 auto;
+      a {
+        transition: all 0.2s ease;
+        &:hover {
+          text-shadow: 0 0 10px #ffb337;
+          transform: scale(1.03);
+        }
+      }
     }
   }
   @media screen and (max-width: 768px) {
