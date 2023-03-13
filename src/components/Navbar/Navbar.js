@@ -25,7 +25,7 @@ const Navbar = ({ open, setOpen }) => {
         <MainLogo to="/">
           <h1>John Venkiah</h1>
         </MainLogo>
-        <NavMenu open={open}>
+        <NavMenu open={window.innerWidth <= 768 && open}>
           <ul>{menuMarkup}</ul>
         </NavMenu>
       </Nav>
