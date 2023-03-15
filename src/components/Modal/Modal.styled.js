@@ -2,23 +2,15 @@ import styled from 'styled-components';
 
 export const IntroModal = styled.div`
   position: fixed;
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 11;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
-
-  p {
-    font-weight: bold;
-    font-size: 1rem;
-    font-style: italic;
-    padding: 0 1rem;
-    color: #000;
-  }
 
   div {
     position: absolute;
@@ -34,5 +26,21 @@ export const IntroModal = styled.div`
     display: inherit;
     justify-content: center;
     align-items: center;
+
+    button {
+      border-radius: 18px;
+      position: absolute;
+      top: 0.3rem;
+      right: 0.3rem;
+      padding: 0.5rem;
+    }
+
+    p {
+      font-weight: bold;
+      font-size: 1rem;
+      font-style: italic;
+      padding: 0 1rem;
+      color: #000;
+    }
   }
 `;

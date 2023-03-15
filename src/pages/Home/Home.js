@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { GrClose } from 'react-icons/gr';
+import { motion } from 'framer-motion';
 import {
   AlbumImg,
   AlbumWrapper,
@@ -10,7 +12,7 @@ import jvt3Small from '../../images/jvt3-small.jpeg';
 import Modal from '../../components/Modal';
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(true);
   const toggleModal = () => setIsModalOpen(!isModalOpen);
 
   return (
@@ -21,28 +23,21 @@ export default function Home() {
           <Modal
             isOpen={isModalOpen}
             toggleModal={toggleModal}
-            closeOnOutsideClick={true}
+            closeOnOutsideClick={false}
+            children={
+              <>
+                <button onClick={toggleModal}>
+                  <GrClose />
+                </button>
+                <p>This is inside the Modal!</p>
+              </>
+            }
           />
-          <p>This is inside the Modal!</p>
-          <Modal />
-          <button onClick={toggleModal}>
-            {/* <a
-          href="https://open.spotify.com/album/7xzKnB8eRTmfu47DzCMB1t?si=f1fPYP6fRaKGL5CC0hp1yg"
-          target="_blank"
-          rel="noopener noreferrer"
-          >
-            <AlbumImg
-              src={standardsCover}
-              class="album-cover"
-              alt="Click the album cover to listen to John Venkiah and Rasmus Nyvall's new album 'Standards' (opens Spotify)"
-            ></AlbumImg>
-          </a> */}
-            <AlbumImg
-              src={standardsCover}
-              class="album-cover"
-              alt="Click the album cover to listen to John Venkiah and Rasmus Nyvall's new album 'Standards' (opens Spotify)"
-            ></AlbumImg>
-          </button>
+          <AlbumImg
+            onClick={toggleModal}
+            src={standardsCover}
+            alt="Click the album cover to listen to John Venkiah and Rasmus Nyvall's new album 'Standards' (opens Spotify)"
+          ></AlbumImg>
           <div>
             <h3>John Venkiah & Rasmus Nyvall - Standards</h3>
           </div>
@@ -55,7 +50,6 @@ export default function Home() {
           >
             <AlbumImg
               src={jvt3Small}
-              class="album-cover"
               alt="Click the album cover to listen to John Venkiah Trio's album 'On to Something Good' (opens Spotify)"
             ></AlbumImg>
           </a>

@@ -1,8 +1,11 @@
 import { IntroModal } from './Modal.styled';
 import { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
+import { AnimatePresence } from 'framer-motion';
 
 const Modal = ({ isOpen, toggleModal, closeOnOutsideClick, children }) => {
   const modalRef = useRef(null);
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -10,6 +13,7 @@ const Modal = ({ isOpen, toggleModal, closeOnOutsideClick, children }) => {
         modalRef.current &&
         !modalRef.current.contains(event.target)
       ) {
+        console.log(modalRef.current);
         toggleModal();
       }
     };
@@ -21,9 +25,21 @@ const Modal = ({ isOpen, toggleModal, closeOnOutsideClick, children }) => {
     };
   }, [modalRef, closeOnOutsideClick, toggleModal]);
   return (
-    <IntroModal style={!isOpen ? { display: 'none' } : { display: 'flex' }}>
-      <div ref={modalRef}>{children}</div>
-    </IntroModal>
+    <AnimatePresence>
+      {!isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3, ease: 'easeInOut' }}
+          key={isOpen}
+        >
+          <IntroModal style={isOpen ? { display: 'none' } : null}>
+            <div ref={modalRef}>{children}</div>
+          </IntroModal>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 export default Modal;
