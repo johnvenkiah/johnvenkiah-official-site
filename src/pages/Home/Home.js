@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { GrClose } from 'react-icons/gr';
-import { motion } from 'framer-motion';
 import {
   AlbumImg,
   AlbumWrapper,
@@ -26,9 +25,6 @@ export default function Home() {
             closeOnOutsideClick={false}
             children={
               <>
-                <button onClick={toggleModal}>
-                  <GrClose />
-                </button>
                 <p>This is inside the Modal!</p>
               </>
             }

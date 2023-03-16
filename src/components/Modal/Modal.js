@@ -2,6 +2,7 @@ import { IntroModal } from './Modal.styled';
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { AnimatePresence } from 'framer-motion';
+import { IoMdClose } from 'react-icons/io';
 
 const Modal = ({ isOpen, toggleModal, closeOnOutsideClick, children }) => {
   const modalRef = useRef(null);
@@ -13,7 +14,6 @@ const Modal = ({ isOpen, toggleModal, closeOnOutsideClick, children }) => {
         modalRef.current &&
         !modalRef.current.contains(event.target)
       ) {
-        console.log(modalRef.current);
         toggleModal();
       }
     };
@@ -24,6 +24,10 @@ const Modal = ({ isOpen, toggleModal, closeOnOutsideClick, children }) => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [modalRef, closeOnOutsideClick, toggleModal]);
+  const style = { color: 'white', fontSize: '1.5rem' };
+  !isOpen
+    ? (document.body.style.overflow = 'hidden')
+    : (document.body.style.overflow = 'auto');
   return (
     <AnimatePresence>
       {!isOpen && (
@@ -35,7 +39,12 @@ const Modal = ({ isOpen, toggleModal, closeOnOutsideClick, children }) => {
           key={isOpen}
         >
           <IntroModal style={isOpen ? { display: 'none' } : null}>
-            <div ref={modalRef}>{children}</div>
+            <div ref={modalRef}>
+              <button onClick={toggleModal}>
+                <IoMdClose style={style} />
+              </button>
+              {children}
+            </div>
           </IntroModal>
         </motion.div>
       )}

@@ -34,7 +34,7 @@ export const NavMenu = styled.div`
   width: 100vw;
   @media screen and (max-width: 768px) {
     backdrop-filter: blur(10px);
-    background-color: rgba(25, 50, 50, 0.5);
+    background-color: rgba(38, 50, 50, 0.5);
   }
 
   ul {
