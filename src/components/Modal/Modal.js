@@ -24,7 +24,12 @@ const Modal = ({ isOpen, toggleModal, closeOnOutsideClick, children }) => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [modalRef, closeOnOutsideClick, toggleModal]);
-  const style = { color: 'white', fontSize: '1.5rem' };
+  const closeButtonStyle = {
+    color: 'white',
+    fontSize: '1.5rem',
+    cursor: 'pointer',
+    filter: 'drop-shadow(0px 0px 2px #000)',
+  };
   !isOpen
     ? (document.body.style.overflow = 'hidden')
     : (document.body.style.overflow = 'auto');
@@ -41,7 +46,7 @@ const Modal = ({ isOpen, toggleModal, closeOnOutsideClick, children }) => {
           <IntroModal style={isOpen ? { display: 'none' } : null}>
             <div ref={modalRef}>
               <button onClick={toggleModal}>
-                <IoMdClose style={style} />
+                <IoMdClose style={closeButtonStyle} />
               </button>
               {children}
             </div>
