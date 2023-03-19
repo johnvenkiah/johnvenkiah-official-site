@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { FaSpotify as Spotify } from 'react-icons/fa';
 
 export const IntroModal = styled.div`
   position: fixed;
@@ -12,13 +11,13 @@ export const IntroModal = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
 
   div:nth-child(1) {
     position: absolute;
     top: 50%;
     width: 30%;
     background-color: rgba(38, 50, 50, 0.5);
-    backdrop-filter: blur(10px);
     text-align: center;
     transform: translateY(-50%);
     padding: 1rem 0.2rem 0.5rem;
@@ -34,6 +33,7 @@ export const IntroModal = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease-in-out;
 
     @media screen and (max-width: 768px) {
       width: 80vw;
