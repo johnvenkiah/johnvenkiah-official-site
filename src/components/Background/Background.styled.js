@@ -8,5 +8,4 @@ export const BackgroundImg = styled.img`
   object-fit: cover;
   position: fixed;
   z-index: -1;
-  /* transition: all 0.7s ease-in-out; */
 `;

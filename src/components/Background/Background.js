@@ -21,12 +21,16 @@ const Background = () => {
     '/about': johnPalladium,
     '/contact': soloProfile,
   };
+  const style = {
+    boxShadow: 'inset 0 0 50px #000',
+  };
 
   return (
     <motion.div
+      style={style}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 0.8, ease: 'easeInOut' }}
+      transition={{ duration: 0.8, ease: [0.17, 0.67, 0.83, 0.67] }}
       key={pathname}
     >
       <BackgroundImg

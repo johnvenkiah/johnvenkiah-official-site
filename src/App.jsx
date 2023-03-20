@@ -5,8 +5,12 @@ import { IoIosArrowUp } from 'react-icons/io';
 import { useOnClickOutside } from './hooks';
 import { GlobalStyles } from './global';
 import { theme } from './theme';
-import './App.css';
-import { ContentsWrapper, MiddleFadeBar, ScrollElement } from './App.styled';
+import {
+  ContentsWrapper,
+  MiddleFadeBar,
+  ScrollElement,
+  MainContainer,
+} from './App.styled';
 import { Navbar, Burger } from './components';
 import Home from './pages/Home/Home';
 import About from './pages/about';
@@ -45,13 +49,13 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Router>
+        <Background />
         <ScrollToTop />
         <div ref={node}>
           <Burger open={open} setOpen={setOpen} />
           <Navbar open={open} setOpen={setOpen} />
         </div>
-        <Background />
-        <div className="mainContainer">
+        <MainContainer>
           <div>
             <MiddleFadeBar>
               <ScrollElement
@@ -76,7 +80,7 @@ function App() {
               </ScrollElement>
             </ContentsWrapper>
           </div>
-        </div>
+        </MainContainer>
       </Router>
     </ThemeProvider>
   );

@@ -1,5 +1,10 @@
 import styled from 'styled-components';
 
+export const MainContainer = styled.div`
+  min-height: 100vh;
+  opacity: 1;
+`;
+
 export const MiddleFadeBar = styled.div`
   width: 100%;
   text-align: center;
@@ -15,6 +20,7 @@ export const ContentsWrapper = styled.div`
   margin-top: 75vh;
   padding: 0 1rem;
   background-color: rgba(0, 0, 0, 0.7);
+  position: relative;
 `;
 
 export const ScrollElement = styled.div`
