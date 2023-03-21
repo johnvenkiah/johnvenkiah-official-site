@@ -1,4 +1,4 @@
-import { IntroModal } from './Modal.styled';
+import { IntroModal, ModalContainer } from './Modal.styled';
 import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { AnimatePresence } from 'framer-motion';
@@ -41,16 +41,15 @@ const Modal = ({ isOpen, toggleModal, closeOnOutsideClick, children }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.3, ease: 'easeInOut' }}
         key={isOpen}
       >
         <IntroModal>
-          <div ref={modalRef}>
+          <ModalContainer ref={modalRef}>
             <button onClick={toggleModal}>
               <IoMdClose style={closeButtonStyle} />
             </button>
             {children}
-          </div>
+          </ModalContainer>
         </IntroModal>
       </motion.div>
       )
