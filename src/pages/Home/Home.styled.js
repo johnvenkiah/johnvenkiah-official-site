@@ -24,10 +24,11 @@ export const AlbumWrapper = styled.div`
   align-items: center;
   justify-content: center;
 
-  /* div {
+  h3 {
+    margin: 1rem auto 2rem;
     text-align: center;
     width: 70%;
-  } */
+  }
 `;
 
 export const AlbumImg = styled.img`
