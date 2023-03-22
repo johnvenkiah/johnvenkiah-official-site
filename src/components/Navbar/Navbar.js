@@ -2,6 +2,7 @@ import React from 'react';
 import { bool } from 'prop-types';
 import { Nav, NavLink, NavMenu } from './Navbar.styled';
 import { MainLogo } from '../Burger/Burger.styled';
+import ScrollToTop from '../ScrollToTop';
 
 const Navbar = ({ open, setOpen }) => {
   const menuItems = {
@@ -22,7 +23,15 @@ const Navbar = ({ open, setOpen }) => {
   return (
     <>
       <Nav>
-        <MainLogo to="/">
+        <MainLogo
+          to="/"
+          onClick={() =>
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth',
+            })
+          }
+        >
           <h1>John Venkiah</h1>
         </MainLogo>
         <NavMenu open={window.innerWidth <= 768 && open}>
