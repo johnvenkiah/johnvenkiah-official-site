@@ -44,7 +44,10 @@ const Modal = ({ isOpen, toggleModal, closeOnOutsideClick, children }) => {
         key={isOpen}
       >
         <IntroModal>
-          <ModalContainer ref={modalRef}>
+          <ModalContainer
+            ref={modalRef}
+            style={{ backdropFilter: 'blur(10px)' }}
+          >
             <button onClick={toggleModal}>
               <IoMdClose style={closeButtonStyle} />
             </button>

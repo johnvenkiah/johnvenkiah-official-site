@@ -39,7 +39,6 @@ export const IntroModal = styled.div`
 `;
 
 export const ModalContainer = styled.div`
-  backdrop-filter: blur(10px);
   position: absolute;
   top: 50%;
   width: 30%;
