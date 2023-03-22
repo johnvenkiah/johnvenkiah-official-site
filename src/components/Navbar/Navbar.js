@@ -2,7 +2,6 @@ import React from 'react';
 import { bool } from 'prop-types';
 import { Nav, NavLink, NavMenu } from './Navbar.styled';
 import { MainLogo } from '../Burger/Burger.styled';
-import ScrollToTop from '../ScrollToTop';
 
 const Navbar = ({ open, setOpen }) => {
   const menuItems = {
