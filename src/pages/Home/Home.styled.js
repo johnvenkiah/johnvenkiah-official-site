@@ -5,6 +5,19 @@ export const HomeStyled = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  p {
+    position: fixed;
+    top: 50%;
+    text-align: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    transform: translateY(-50%);
+    width: 80%;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
 `;
 
 export const SectionContainer = styled.div`

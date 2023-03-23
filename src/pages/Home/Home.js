@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { FaSpotify, FaDeezer, FaItunesNote } from 'react-icons/fa';
 import { SiTidal } from 'react-icons/si';
 import {} from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import {
   AlbumImg,
   AlbumWrapper,
@@ -14,21 +15,28 @@ import Modal from '../../components/Modal';
 import { ModalWrapper } from '../../components/Modal/Modal.styled';
 
 export default function Home() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
-  const toggleModal = () => setIsModalOpen(!isModalOpen);
+  const [modalOpen, setModalOpen] = useState(false);
   const style = {
     filter: 'drop-shadow(0px 0px 2px #000)',
   };
 
   return (
     <HomeStyled>
+      <motion.p
+        initial={{ opacity: 1, scale: 0.9 }}
+        animate={{ opacity: 0, scale: 1 }}
+        transition={{ duration: 1.5, delay: 1.5 }}
+        delay={1.5}
+      >
+        Pianist, Singer, Songwriter and Software Developer
+      </motion.p>
       <h2>Latest Releases</h2>
       <SectionContainer>
         <AlbumWrapper>
           <Modal
-            isOpen={isModalOpen}
-            toggleModal={toggleModal}
-            closeOnOutsideClick={false}
+            ariaHidden={modalOpen && 'true'}
+            modalOpen={modalOpen}
+            setModalOpen={setModalOpen}
             children={
               <>
                 <img src={standardsCover} alt="Album Cover - Standards" />
@@ -63,7 +71,7 @@ export default function Home() {
             }
           />
           <AlbumImg
-            onClick={toggleModal}
+            onClick={() => setModalOpen(!modalOpen)}
             src={standardsCover}
             alt="Click the album cover to listen to John Venkiah and Rasmus Nyvall's new album 'Standards' (opens Spotify)"
           ></AlbumImg>

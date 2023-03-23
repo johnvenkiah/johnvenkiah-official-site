@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 
-export const IntroModal = styled.div`
+export const ModalStyled = styled.div`
   position: fixed;
+  visibility: ${({ modalOpen }) => (modalOpen ? 'visible' : 'hidden')};
   display: flex;
+  /* display: ${({ modalOpen }) => (!modalOpen ? 'none' : 'flex')}; */
+  opacity: ${({ modalOpen }) => (modalOpen ? '1' : '0')};
+  transform: ${({ modalOpen }) => (modalOpen ? 'scale(1)' : 'scale(.95)')};
   justify-content: center;
   align-items: center;
   z-index: 11;
@@ -11,6 +15,8 @@ export const IntroModal = styled.div`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
+  transition: all 0.4s ease-in-out;
+  backdrop-filter: blur(10px);
 
   button {
     position: absolute;
