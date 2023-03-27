@@ -19,8 +19,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   h1 {
-    font-size: 1.9rem;
-    margin: 1rem 0;
+    font-size: 2.4rem;
+    margin: .6rem 0;
   }
 
   h1, h2, h3, h4, h5, h6 {

@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { bool } from 'prop-types';
-import { Nav, NavLink, NavMenu } from './Navbar.styled';
-import { MainLogo } from '../Burger/Burger.styled';
+import { LogoP, Nav, NavLink, NavMenu } from './Navbar.styled';
+import { MainLogo } from '../Navbar/Navbar.styled';
 
-const Navbar = ({ open, setOpen }) => {
+const Navbar = ({ open, setOpen, logoPIsVisible, setLogoPIsVisible }) => {
   const menuItems = {
     '/': 'Home',
     '/music': 'Music',
@@ -14,11 +14,28 @@ const Navbar = ({ open, setOpen }) => {
     '/contact': 'Contact/Press',
   };
 
+  useEffect(() => {
+    window.addEventListener('scroll', scrollHandler);
+    return () => window.removeEventListener('scroll', scrollHandler);
+  });
+
+  const scrollHandler = () => {
+    let height = 130;
+    const winScroll =
+      document.body.scrollTop || document.documentElement.scrollTop;
+
+    winScroll > height
+      ? logoPIsVisible && // to limit setting state only the first time
+        setLogoPIsVisible(false)
+      : setLogoPIsVisible(true);
+  };
+
   const menuMarkup = Object.keys(menuItems).map((nr) => (
     <li key={nr.toString()} onClick={() => setOpen(!open)}>
       <NavLink to={nr}>{menuItems[nr]}</NavLink>
     </li>
   ));
+
   return (
     <>
       <Nav>
@@ -30,9 +47,17 @@ const Navbar = ({ open, setOpen }) => {
               behavior: 'smooth',
             })
           }
+          style={
+            logoPIsVisible
+              ? { transform: 'scale(1)', left: '1rem' }
+              : { transform: 'scale(0.9)', left: '.5rem' }
+          }
         >
           <h1>John Venkiah</h1>
         </MainLogo>
+        <LogoP style={logoPIsVisible ? { opacity: 1 } : { opacity: 0 }}>
+          Pianist, Singer, Songwriter and Developer
+        </LogoP>
         <NavMenu open={window.innerWidth <= 768 && open}>
           <ul>{menuMarkup}</ul>
         </NavMenu>

@@ -4,7 +4,6 @@ export const ModalStyled = styled.div`
   position: fixed;
   visibility: ${({ modalOpen }) => (modalOpen ? 'visible' : 'hidden')};
   display: flex;
-  /* display: ${({ modalOpen }) => (!modalOpen ? 'none' : 'flex')}; */
   opacity: ${({ modalOpen }) => (modalOpen ? '1' : '0')};
   transform: ${({ modalOpen }) => (modalOpen ? 'scale(1)' : 'scale(.95)')};
   justify-content: center;
@@ -68,6 +67,7 @@ export const ModalContainer = styled.div`
   @media screen and (max-width: 768px) {
     width: 80vw;
     height: 80vh;
+    transform: translateY(-45%);
   }
 `;
 

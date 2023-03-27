@@ -67,3 +67,39 @@ export const NavMenu = styled.div`
     padding-top: 85px;
   }
 `;
+
+export const MainLogo = styled(Link)`
+  position: absolute;
+  top: 0.3rem;
+  left: 1rem;
+  display: flex;
+  color: ${({ theme }) => theme.primaryLight};
+  text-decoration: none;
+  z-index: 15;
+  transform: scale(1);
+  transition: transform 0.5s ease-in-out, left 0.5s ease-in-out;
+`;
+
+export const LogoP = styled.p`
+  z-index: 10;
+  position: fixed;
+  font-family: 'Barlow Condensed';
+  top: 50px;
+  left: 15px;
+  font-size: 1.03rem;
+  text-shadow: 0 0 10px black;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: opacity 0.5s ease-in-out;
+  letter-spacing: 0.1rem;
+  animation: fade-in 0.5s ease-in-out;
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+`;

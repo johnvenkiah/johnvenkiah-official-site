@@ -5,7 +5,7 @@ import johnMopaSinging from '../../images/background/mopa_singing_portrait.png';
 import hands from '../../images/background/hands.jpg';
 import playingRearShirt from '../../images/background/playing_rear_shirt.jpg';
 import soloProfile from '../../images/background/solo_profile.jpg';
-import soloRear from '../../images/background/solo_rear.jpg';
+// import soloRear from '../../images/background/solo_rear.jpg';
 import blackClav from '../../images/background/john_black_clav.png';
 import johnPalladium from '../../images/background/john_palladium.jpeg';
 import johnFolkRock from '../../images/background/john_folk_rock_portrait.png';

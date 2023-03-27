@@ -25,6 +25,9 @@ import Background from './components/Background';
 
 function App() {
   const [open, setOpen] = useState(false);
+  const [logoPIsVisible, setLogoPIsVisible] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
+
   const node = useRef();
   useOnClickOutside(node, () => setOpen(false));
 
@@ -53,7 +56,12 @@ function App() {
         <ScrollToTop />
         <div ref={node}>
           <Burger open={open} setOpen={setOpen} />
-          <Navbar open={open} setOpen={setOpen} />
+          <Navbar
+            open={open}
+            setOpen={setOpen}
+            logoPIsVisible={!modalOpen && logoPIsVisible}
+            setLogoPIsVisible={setLogoPIsVisible}
+          />
         </div>
         <MainContainer>
           <div>
@@ -66,7 +74,13 @@ function App() {
             </MiddleFadeBar>
             <ContentsWrapper>
               <Routes>
-                <Route exact path="/" element={<Home />} />
+                <Route
+                  exact
+                  path="/"
+                  element={
+                    <Home modalOpen={modalOpen} setModalOpen={setModalOpen} />
+                  }
+                />
                 <Route path="/music" element={<Music />} />
                 <Route path="/videos" element={<Videos />} />
                 <Route path="/live" element={<Live />} />
