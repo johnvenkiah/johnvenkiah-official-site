@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const ModalStyled = styled.div`
   position: fixed;
@@ -39,7 +40,8 @@ export const ModalStyled = styled.div`
   p {
     font-weight: bold;
     font-size: 1rem;
-    padding: 0 1rem;
+    padding: 0;
+    margin: 0.5rem;
   }
 `;
 
@@ -77,6 +79,38 @@ export const ModalWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 25%;
+  /* height: 25%; */
   font-size: 2rem;
+
+  svg {
+    filter: drop-shadow(0px 0px 2px #000);
+  }
+`;
+
+export const HorRule = styled.hr`
+  width: 80%;
+  border: 0.5px solid #555;
+`;
+
+export const ModLink = styled(Link)`
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  width: 80%;
+  margin: 0.5rem;
+  background: radial-gradient(black 55%, transparent);
+  /* background: #000; */
+  /* border-top: 0.7px solid #b6b6b666;
+  border-right: 0.7px solid #8e8e8e66;
+  border-bottom: 0.7px solid #000;
+  border-left: 0.7px solid #77777766; */
+  border: #77777766 0.1rem solid;
+  border-radius: 14px;
+  box-shadow: 0 0 1rem 0 #000;
+  padding: 0.5rem;
+  cursor: pointer;
+
+  &.active {
+    color: #ffb337;
+  }
 `;
