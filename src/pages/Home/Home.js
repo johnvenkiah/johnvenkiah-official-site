@@ -1,4 +1,3 @@
-// import React, { useState } from 'react';
 import { FaSpotify, FaDeezer, FaItunesNote } from 'react-icons/fa';
 import { SiTidal } from 'react-icons/si';
 import {} from 'react-icons/fa';
@@ -39,7 +38,6 @@ export default function Home({ modalOpen, setModalOpen }) {
                   <p>Spotify</p>
                   <FaSpotify
                     style={{
-                      // filter: 'drop-shadow(0px 0px 2px #000)',
                       color: '#1ed760',
                     }}
                   />
@@ -48,7 +46,6 @@ export default function Home({ modalOpen, setModalOpen }) {
                   <p>Apple Music</p>
                   <FaItunesNote
                     style={{
-                      // filter: 'drop-shadow(0px 0px 2px #000)',
                       color: '#fa243c',
                     }}
                   />
