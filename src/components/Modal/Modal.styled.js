@@ -96,7 +96,6 @@ export const HorRule = styled.hr`
 export const ModLink = styled(Link)`
   color: #fff;
   font-weight: 600;
-  text-decoration: none;
   width: 80%;
   margin: 0.5rem;
   background: radial-gradient(black 55%, transparent);

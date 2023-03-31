@@ -16,7 +16,6 @@ export const NavLink = styled(Link)`
   font-weight: 600;
   display: flex;
   align-items: center;
-  text-decoration: none;
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
@@ -73,8 +72,6 @@ export const MainLogo = styled(Link)`
   top: 0.3rem;
   left: 1rem;
   display: flex;
-  color: ${({ theme }) => theme.primaryLight};
-  text-decoration: none;
   z-index: 15;
   transform: scale(1);
   transition: transform 0.5s ease-in-out, left 0.5s ease-in-out;

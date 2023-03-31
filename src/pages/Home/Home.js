@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Spotify,
   Deezer,
@@ -19,7 +21,6 @@ import {
   ModLink,
 } from '../../components/Modal/Modal.styled';
 import albumData from '../../components/AlbumData/AlbumData';
-import { useState } from 'react';
 
 export default function Home({ modalOpen, setModalOpen }) {
   const [modalState, setModalState] = useState({ id: null });
@@ -45,7 +46,7 @@ export default function Home({ modalOpen, setModalOpen }) {
       {
         title: 'Apple Music',
         iconElement: <Itunes />,
-        link: data[i].itunes_url,
+        link: data[i].apple_url,
       },
       {
         title: 'Tidal',
@@ -65,9 +66,11 @@ export default function Home({ modalOpen, setModalOpen }) {
         <p>Listen to '{data[i].title}' on</p>
         {albumLinks.map((item, i) => (
           <ModalWrapper key={i}>
-            <p>{item.title}</p>
-            {item.iconElement}
-            {item.title === 'Deezer' && deezerSvg}
+            <Link to={item.link} target="_blank" rel="noreferrer">
+              <p>{item.title}</p>
+              {item.iconElement}
+              {item.title === 'Deezer' && deezerSvg}
+            </Link>
           </ModalWrapper>
         ))}
         <HorRule />

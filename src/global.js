@@ -31,4 +31,9 @@ export const GlobalStyles = createGlobalStyle`
   h1, h2, h3, h4, h5, h6, p, span, a, li {
     text-shadow: 0 0 15px black;
   }
+
+  a {
+    color: ${({ theme }) => theme.primaryLight};
+    text-decoration: none;
+  }
   `;
