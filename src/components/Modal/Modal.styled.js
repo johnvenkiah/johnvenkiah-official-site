@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { FaSpotify, FaDeezer, FaItunesNote } from 'react-icons/fa';
+import { SiTidal } from 'react-icons/si';
 
 export const ModalStyled = styled.div`
   position: fixed;
@@ -79,7 +81,6 @@ export const ModalWrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 50%;
-  /* height: 25%; */
   font-size: 2rem;
 
   svg {
@@ -99,11 +100,6 @@ export const ModLink = styled(Link)`
   width: 80%;
   margin: 0.5rem;
   background: radial-gradient(black 55%, transparent);
-  /* background: #000; */
-  /* border-top: 0.7px solid #b6b6b666;
-  border-right: 0.7px solid #8e8e8e66;
-  border-bottom: 0.7px solid #000;
-  border-left: 0.7px solid #77777766; */
   border: #77777766 0.1rem solid;
   border-radius: 14px;
   box-shadow: 0 0 1rem 0 #000;
@@ -113,4 +109,17 @@ export const ModLink = styled(Link)`
   &.active {
     color: #ffb337;
   }
+`;
+
+export const Spotify = styled(FaSpotify)`
+  color: #1ed760;
+`;
+export const Deezer = styled(FaDeezer)`
+  fill: url(#rainbow-gradient);
+`;
+export const Itunes = styled(FaItunesNote)`
+  color: #fa243c;
+`;
+export const Tidal = styled(SiTidal)`
+  color: #78f3f3;
 `;
