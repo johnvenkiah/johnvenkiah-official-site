@@ -36,27 +36,40 @@ export default function Home({ modalOpen, setModalOpen }) {
   );
 
   const setModalContent = (data, i) => {
+    const albumLinks = [
+      {
+        title: 'Spotify',
+        iconElement: <Spotify />,
+        link: data[i].spotify_url,
+      },
+      {
+        title: 'Apple Music',
+        iconElement: <Itunes />,
+        link: data[i].itunes_url,
+      },
+      {
+        title: 'Tidal',
+        iconElement: <Tidal />,
+        link: data[i].tidal_url,
+      },
+      {
+        title: 'Deezer',
+        iconElement: <Deezer />,
+        link: data[i].deezer_url,
+      },
+    ];
+
     return (
       <>
         <img src={data[i].img_url} alt={data[i].alt_attr} />
         <p>Listen to '{data[i].title}' on</p>
-        <ModalWrapper>
-          <p>Spotify</p>
-          <Spotify />
-        </ModalWrapper>
-        <ModalWrapper>
-          <p>Apple Music</p>
-          <Itunes />
-        </ModalWrapper>
-        <ModalWrapper>
-          <p>Tidal</p>
-          <Tidal />
-        </ModalWrapper>
-        <ModalWrapper>
-          <p>Deezer</p>
-          {deezerSvg}
-          <Deezer />
-        </ModalWrapper>
+        {albumLinks.map((item, i) => (
+          <ModalWrapper key={i}>
+            <p>{item.title}</p>
+            {item.iconElement}
+            {item.title === 'Deezer' && deezerSvg}
+          </ModalWrapper>
+        ))}
         <HorRule />
         <ModLink to={data[i].buy_link}>Buy a Vinyl Copy</ModLink>
       </>
