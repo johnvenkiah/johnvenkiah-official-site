@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import {
   Spotify,
   Deezer,
   Itunes,
   Tidal,
+  ListenLink,
+  ModalHeadingWrapper,
 } from '../../components/Modal/Modal.styled';
 import {
   AlbumImg,
@@ -18,7 +19,7 @@ import Modal from '../../components/Modal';
 import {
   HorRule,
   ModalWrapper,
-  ModLink,
+  BuyLink,
 } from '../../components/Modal/Modal.styled';
 import albumData from '../../components/AlbumData/AlbumData';
 
@@ -62,19 +63,21 @@ export default function Home({ modalOpen, setModalOpen }) {
 
     return (
       <>
-        <img src={data[i].img_url} alt={data[i].alt_attr} />
-        <p>Listen to '{data[i].title}' on</p>
+        <ModalHeadingWrapper>
+          <img src={data[i].img_url} alt={data[i].alt_attr} />
+          <p>Listen to '{data[i].title}' on</p>
+        </ModalHeadingWrapper>
         {albumLinks.map((item, i) => (
           <ModalWrapper key={i}>
-            <Link to={item.link} target="_blank" rel="noreferrer">
+            <ListenLink to={item.link} target="_blank" rel="noreferrer">
               <p>{item.title}</p>
               {item.iconElement}
               {item.title === 'Deezer' && deezerSvg}
-            </Link>
+            </ListenLink>
           </ModalWrapper>
         ))}
         <HorRule />
-        <ModLink to={data[i].buy_link}>Buy a Vinyl Copy</ModLink>
+        <BuyLink to={data[i].buy_link}>Buy a Copy</BuyLink>
       </>
     );
   };

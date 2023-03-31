@@ -33,12 +33,6 @@ export const ModalStyled = styled.div`
     }
   }
 
-  img {
-    width: 50%;
-    box-shadow: 0 0 15px #000;
-    margin-top: 1rem;
-  }
-
   p {
     font-weight: bold;
     font-size: 1rem;
@@ -87,26 +81,68 @@ export const ModalWrapper = styled.div`
     filter: drop-shadow(0px 0px 2px #000);
   }
 `;
+export const ModalHeadingWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0.2rem 0.2rem;
+  padding: 0.5rem;
+  background-color: #1116;
+  font-size: 1.8rem;
+  border-radius: 8px;
+
+  img {
+    width: 40%;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+`;
 
 export const HorRule = styled.hr`
   width: 80%;
   border: 0.5px solid #555;
 `;
 
-export const ModLink = styled(Link)`
+export const BuyLink = styled(Link)`
   color: #fff;
   font-weight: 600;
   width: 80%;
   margin: 0.5rem;
-  background: radial-gradient(black 55%, transparent);
+  background-color: #1a1a1a;
   border: #77777766 0.1rem solid;
   border-radius: 14px;
   box-shadow: 0 0 1rem 0 #000;
   padding: 0.5rem;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 
-  &.active {
+  &:hover {
     color: #ffb337;
+    background-color: black;
+    box-shadow: 0 0 0.5rem 0 #ffb337;
+    scale: 1.02;
+  }
+`;
+export const ListenLink = styled(Link)`
+  color: #fff;
+  font-weight: 600;
+  width: 95%;
+  margin: 0.2rem 0;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: #ffb337;
+    background-color: black;
+    box-shadow: 0 0 0.5rem 0 #ffb337;
+    scale: 1.02;
+  }
+  p {
+    font-size: 0.8rem;
   }
 `;
 
