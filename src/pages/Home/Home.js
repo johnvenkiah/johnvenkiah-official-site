@@ -37,6 +37,41 @@ export default function Home({ modalOpen, setModalOpen }) {
     </svg>
   );
 
+  const setHomePageContent = () => {
+    const listenData = [
+      {
+        src: standardsCover,
+        alt: "Link to listen to John Venkiah and Rasmus Nyvall's new album 'Standards'",
+        h3: 'John Venkiah & Rasmus Nyvall - Standards (2022)',
+      },
+      {
+        src: jvt3Small,
+        alt: "Link to listen to John Venkiah Trio's album 'On to Something Good'",
+        h3: 'John Venkiah Trio - On to Something Good (2021)',
+      },
+    ];
+
+    return (
+      <>
+        {listenData.map((item, i) => (
+          <AlbumWrapper key={i}>
+            <AlbumImg
+              onClick={() => {
+                setModalOpen(!modalOpen);
+                setModalState({ id: albumData[i].id });
+              }}
+              src={item.src}
+              alt={item.alt}
+            ></AlbumImg>
+            <div>
+              <h3>{item.h3}</h3>
+            </div>
+          </AlbumWrapper>
+        ))}
+      </>
+    );
+  };
+
   const setModalContent = (data, i) => {
     const albumLinks = [
       {
@@ -81,7 +116,9 @@ export default function Home({ modalOpen, setModalOpen }) {
           </ModalWrapper>
         ))}
         <HorRule />
-        <BuyLink to={data[i].buy_link}>Buy a Copy</BuyLink>
+        <BuyLink to={data[i].buy_link} target="_blank" rel="noreferrer">
+          Buy a Copy
+        </BuyLink>
       </>
     );
   };
@@ -90,47 +127,21 @@ export default function Home({ modalOpen, setModalOpen }) {
     <HomeStyled>
       <h2>Latest Releases</h2>
       <SectionContainer>
-        <AlbumWrapper>
-          <Modal
-            ariaHidden={modalOpen && 'true'}
-            modalOpen={modalOpen}
-            setModalOpen={setModalOpen}
-            children={
-              <>
-                {modalOpen &&
-                  setModalContent(
-                    albumData,
-                    albumData.findIndex((p) => p.id === modalState.id)
-                  )}
-              </>
-            }
-          />
-          <AlbumImg
-            onClick={() => {
-              setModalOpen(!modalOpen);
-              setModalState({ id: albumData[0].id });
-            }}
-            src={standardsCover}
-            alt="Link to listen to John Venkiah and Rasmus Nyvall's new album 'Standards'"
-          ></AlbumImg>
-          <div>
-            <h3>John Venkiah & Rasmus Nyvall - Standards (2022)</h3>
-          </div>
-        </AlbumWrapper>
-        <AlbumWrapper>
-          <AlbumImg
-            onClick={() => {
-              setModalOpen(!modalOpen);
-              setModalState({ id: albumData[1].id });
-            }}
-            src={jvt3Small}
-            alt="Click the album cover to listen to John Venkiah Trio's album 'On to Something Good' (opens Spotify)"
-          ></AlbumImg>
-          {/* </a> */}
-          <div>
-            <h3>John Venkiah Trio - On to Something Good (2021)</h3>
-          </div>
-        </AlbumWrapper>
+        <Modal
+          ariaHidden={modalOpen && 'true'}
+          modalOpen={modalOpen}
+          setModalOpen={setModalOpen}
+          children={
+            <>
+              {modalOpen &&
+                setModalContent(
+                  albumData,
+                  albumData.findIndex((p) => p.id === modalState.id)
+                )}
+            </>
+          }
+        />
+        {setHomePageContent()}
       </SectionContainer>
     </HomeStyled>
   );

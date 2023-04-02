@@ -34,4 +34,8 @@ export const AlbumWrapper = styled.div`
 export const AlbumImg = styled.img`
   width: 40vh;
   box-shadow: 0 0 15px #000;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.03);
+  }
 `;

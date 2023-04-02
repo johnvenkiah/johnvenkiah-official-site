@@ -48,7 +48,7 @@ export const ModalContainer = styled.div`
   background-color: rgba(38, 50, 50, 0.5);
   text-align: center;
   transform: translateY(-50%);
-  padding: 0.2rem 0.2rem 0.5rem;
+  padding: 0.2rem 0.2rem 0;
   border-top: 0.7px solid #b6b6b666;
   border-right: 0.7px solid #8e8e8e66;
   border-bottom: 0.7px solid #000;
@@ -84,22 +84,23 @@ export const ModalWrapper = styled.div`
 export const ModalHeadingWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   margin: 0.2rem 0.2rem 0.2rem;
   padding: 0.5rem;
   background-color: #1129;
   font-size: 1.8rem;
   border-radius: 12px;
+  border: #77777766 0.1rem solid;
 
   div {
+    max-width: 58%;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
   }
 
   img {
-    width: 40%;
+    width: 35%;
   }
 
   small {
@@ -108,21 +109,20 @@ export const ModalHeadingWrapper = styled.div`
 `;
 
 export const HorRule = styled.hr`
-  width: 80%;
+  width: 75%;
   border-radius: 5px;
-  height: 0.1rem;
+  height: 0rem;
   border: 0.5px solid #555;
 `;
 
 export const BuyLink = styled(Link)`
   color: #fff;
   font-weight: 600;
-  width: 80%;
-  max-height: 3rem;
-  margin: 0.5rem;
+  width: 97%;
+  max-height: 3.4rem;
   background-color: #1a1a1a;
   border: #77777766 0.1rem solid;
-  border-radius: 14px;
+  border-radius: 12px;
   box-shadow: 0 0 1rem 0 #000;
   padding: 0.5rem;
   display: flex;
@@ -134,14 +134,15 @@ export const BuyLink = styled(Link)`
   &:hover {
     color: #ffb337;
     background-color: black;
-    box-shadow: 0 0 0.5rem 0 #ffb337;
+    box-shadow: 0 0 1rem 0 #b88126;
   }
 `;
 export const ListenLink = styled(Link)`
   color: #fff;
   font-weight: 600;
-  width: 90%;
+  width: 85%;
   margin: 0.2rem;
+  padding: 0.5rem;
   border-radius: 14px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -149,7 +150,7 @@ export const ListenLink = styled(Link)`
   &:hover {
     color: #ffb337;
     background-color: black;
-    box-shadow: 0 0 0.5rem 0 #ffb337;
+    box-shadow: 0 0 1rem 0 #b88126;
     scale: 1.02;
   }
   p {
