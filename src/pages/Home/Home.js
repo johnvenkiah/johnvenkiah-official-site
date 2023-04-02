@@ -65,7 +65,11 @@ export default function Home({ modalOpen, setModalOpen }) {
       <>
         <ModalHeadingWrapper>
           <img src={data[i].img_url} alt={data[i].alt_attr} />
-          <p>Listen to '{data[i].title}' on</p>
+          <div>
+            <small>Listen to</small>
+            <p>'{data[i].title}'</p>
+            <small>on</small>
+          </div>
         </ModalHeadingWrapper>
         {albumLinks.map((item, i) => (
           <ModalWrapper key={i}>

@@ -37,7 +37,7 @@ export const ModalStyled = styled.div`
     font-weight: bold;
     font-size: 1rem;
     padding: 0;
-    margin: 0.5rem;
+    margin: 0 auto;
   }
 `;
 
@@ -48,7 +48,7 @@ export const ModalContainer = styled.div`
   background-color: rgba(38, 50, 50, 0.5);
   text-align: center;
   transform: translateY(-50%);
-  padding: 1rem 0.2rem 0.5rem;
+  padding: 0.2rem 0.2rem 0.5rem;
   border-top: 0.7px solid #b6b6b666;
   border-right: 0.7px solid #8e8e8e66;
   border-bottom: 0.7px solid #000;
@@ -60,7 +60,7 @@ export const ModalContainer = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: space-evenly;
 
   @media screen and (max-width: 768px) {
     width: 80vw;
@@ -84,25 +84,33 @@ export const ModalWrapper = styled.div`
 export const ModalHeadingWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
-  margin: 1rem 0.2rem 0.2rem;
+  margin: 0.2rem 0.2rem 0.2rem;
   padding: 0.5rem;
-  background-color: #1116;
+  background-color: #1129;
   font-size: 1.8rem;
-  border-radius: 8px;
+  border-radius: 12px;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
 
   img {
     width: 40%;
   }
 
-  p {
+  small {
     font-size: 0.9rem;
   }
 `;
 
 export const HorRule = styled.hr`
   width: 80%;
+  border-radius: 5px;
+  height: 0.1rem;
   border: 0.5px solid #555;
 `;
 
@@ -110,12 +118,16 @@ export const BuyLink = styled(Link)`
   color: #fff;
   font-weight: 600;
   width: 80%;
+  max-height: 3rem;
   margin: 0.5rem;
   background-color: #1a1a1a;
   border: #77777766 0.1rem solid;
   border-radius: 14px;
   box-shadow: 0 0 1rem 0 #000;
   padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 
@@ -123,14 +135,13 @@ export const BuyLink = styled(Link)`
     color: #ffb337;
     background-color: black;
     box-shadow: 0 0 0.5rem 0 #ffb337;
-    scale: 1.02;
   }
 `;
 export const ListenLink = styled(Link)`
   color: #fff;
   font-weight: 600;
-  width: 95%;
-  margin: 0.2rem 0;
+  width: 90%;
+  margin: 0.2rem;
   border-radius: 14px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
