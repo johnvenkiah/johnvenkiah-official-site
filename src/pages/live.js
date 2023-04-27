@@ -53,19 +53,20 @@ export default function Live() {
       descr = descr.replace('</a>', '');
 
       return (
-        <a
-          className="list-group-item"
-          href={descr}
-          target="_blank"
-          rel="noreferrer"
-          key={event.id}
-        >
-          <span className="date">
-            {moment(event.start.dateTime).format('D/M-Y')}
-            {' - '}
-          </span>
-          <span className="location">{event.location}</span>
-        </a>
+        <div key={event.id}>
+          <a
+            className="list-group-item"
+            href={descr}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className="date">
+              {moment(event.start.dateTime).format('D/M-Y')}
+              {' - '}
+            </span>
+            <span className="location">{event.location}</span>
+          </a>
+        </div>
       );
     } else {
       return (
