@@ -11,17 +11,14 @@ import {
   ScrollElement,
   MainContainer,
 } from './App.styled';
-import { Navbar, Burger } from './components';
+import { Navbar, Burger, Heading, ScrollToTop, Background } from './components';
 import Home from './pages/Home/Home';
-import About from './pages/about';
-import Contact from './pages/contact';
 import Music from './pages/music';
 import Videos from './pages/videos';
-import Live from './pages/live';
+import Live from './pages/Live/Live';
+import About from './pages/about';
+import Contact from './pages/contact';
 import Developer from './pages/developer';
-import ScrollToTop from './components/ScrollToTop';
-import Heading from './components/Heading';
-import Background from './components/Background';
 
 function App() {
   const [open, setOpen] = useState(false);

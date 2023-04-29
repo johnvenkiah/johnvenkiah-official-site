@@ -72,7 +72,7 @@ export default function Live() {
       return (
         <p className="list-group-item" key={event.id}>
           <span className="date">
-            {moment(event.start.dateTime).format('D/M-Y')}
+            ß{moment(event.start.dateTime).format('D/M-Y')}
             {' - '}
           </span>
           <span className="location">{event.location}</span>
