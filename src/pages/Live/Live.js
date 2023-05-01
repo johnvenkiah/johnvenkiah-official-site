@@ -1,9 +1,23 @@
 import { useEffect, useState } from 'react';
 import moment from 'moment';
 import momentDurationFormatSetup from 'moment-duration-format';
+import { useMediaQuery } from 'react-responsive';
+import {
+  Concerts,
+  ListGroup,
+  ListGroupItem,
+  Date,
+  Location,
+  ListGroupLink,
+  ListGroupP,
+  EmptyOrLoading,
+} from './Live.styled';
 momentDurationFormatSetup(moment);
 
 export default function Live() {
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 1224px)',
+  });
   const [calState, setCalState] = useState({
     time: moment().format('dd, Do MMMM, h:mm A'),
     events: [],
@@ -12,15 +26,8 @@ export default function Live() {
   });
 
   useEffect(() => {
-    // const startPolling = () => {
-    //   setTimeout(() => {
-    //     getEvents();
-    //     startPolling();
-    //   }, 60000);
-    // };
-
     const getEvents = () => {
-      fetch('http://localhost:3000/events')
+      fetch('http://localhost:3001/events')
         .then((response) => response.json())
         .then((data) => {
           let events = data;
@@ -53,59 +60,55 @@ export default function Live() {
       descr = descr.replace('</a>', '');
 
       return (
-        <div key={event.id}>
-          <a
-            className="list-group-item"
-            href={descr}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span className="date">
-              {moment(event.start.dateTime).format('D/M-Y')}
-              {' - '}
-            </span>
-            <span className="location">{event.location}</span>
-          </a>
-        </div>
+        <ListGroupLink
+          key={event.id}
+          href={descr}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Date>
+            {moment(event.start.dateTime).format('D.M.Y')}
+            {isDesktopOrLaptop && ' - '}
+          </Date>
+          <Location>{event.location}</Location>
+        </ListGroupLink>
       );
     } else {
       return (
-        <p className="list-group-item" key={event.id}>
-          <span className="date">
-            ß{moment(event.start.dateTime).format('D/M-Y')}
-            {' - '}
-          </span>
-          <span className="location">{event.location}</span>
-        </p>
+        <ListGroupP key={event.id}>
+          <Date>
+            {moment(event.start.dateTime).format('D/M-Y')}
+            {isDesktopOrLaptop && ' - '}
+          </Date>
+          <Location>{event.location}</Location>
+        </ListGroupP>
       );
     }
   });
 
   let emptyState = (
-    <div className="empty">
+    <EmptyOrLoading>
       <h3>No gigs currently in our calendar.</h3>
       <p>
         We are updating it continuously, so it may currently be under
         maintenance. Please contact us if you have any queries!
       </p>
-    </div>
+    </EmptyOrLoading>
   );
 
   let loadingState = (
-    <div className="loading">
+    <EmptyOrLoading>
       <h4>Loading dates...</h4>
-    </div>
+    </EmptyOrLoading>
   );
 
   return (
-    <div className="container">
-      <div className="concerts">
-        <div className="list-group">
-          {calState.isLoading && loadingState}
-          {events.length > 0 && eventsList}
-          {calState.isEmpty && emptyState}
-        </div>
-      </div>
-    </div>
+    <Concerts>
+      <ListGroup>
+        {calState.isLoading && loadingState}
+        {events.length > 0 && eventsList}
+        {calState.isEmpty && emptyState}
+      </ListGroup>
+    </Concerts>
   );
 }

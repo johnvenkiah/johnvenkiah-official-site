@@ -133,24 +133,29 @@ export const BuyLink = styled(Link)`
 
   &:hover {
     color: #ffb337;
-    background-color: black;
-    box-shadow: 0 0 1rem 0 #b88126;
+    background-color: #1a1a1a08;
+    box-shadow: 0 0 1rem 0 #8d5a2b;
+    border: 0.1rem solid orange;
+    text-shadow: black 0 0 10px 5px;
   }
 `;
 export const ListenLink = styled(Link)`
-  color: #fff;
+  color: $mainLightColor;
   font-weight: 600;
   width: 85%;
   margin: 0.2rem;
   padding: 0.5rem;
   border-radius: 14px;
+  border: 0.5px solid transparent;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 
   &:hover {
     color: #ffb337;
-    background-color: black;
-    box-shadow: 0 0 1rem 0 #b88126;
+    background-color: #1a1a1a08;
+    box-shadow: 0 0 1rem 0 #8d5a2b;
+    border: 0.5px solid orange;
+    text-shadow: black 0 0 10px 5px;
     scale: 1.02;
   }
   p {

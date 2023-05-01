@@ -5,7 +5,12 @@ export const BackgroundImg = styled.img`
   left: 0;
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   object-fit: cover;
   position: fixed;
   z-index: -1;
+  transition-property: height, min-height;
+  transition-duration: 0.6s;
+  transition-delay: 0.1s;
+  transition-timing-function: ease-in;
 `;
