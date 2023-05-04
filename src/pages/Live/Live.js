@@ -5,12 +5,11 @@ import { useMediaQuery } from 'react-responsive';
 import {
   Concerts,
   ListGroup,
-  ListGroupItem,
-  Date,
-  Location,
   ListGroupLink,
   ListGroupP,
   EmptyOrLoading,
+  EventSpan,
+  EventSpanBold,
 } from './Live.styled';
 momentDurationFormatSetup(moment);
 
@@ -66,21 +65,23 @@ export default function Live() {
           target="_blank"
           rel="noreferrer"
         >
-          <Date>
+          <EventSpan>
             {moment(event.start.dateTime).format('D.M.Y')}
             {isDesktopOrLaptop && ' - '}
-          </Date>
-          <Location>{event.location}</Location>
+          </EventSpan>
+          <EventSpanBold>{event.summary}</EventSpanBold>
+          <EventSpan>{event.location}</EventSpan>
         </ListGroupLink>
       );
     } else {
       return (
         <ListGroupP key={event.id}>
-          <Date>
+          <EventSpan>
             {moment(event.start.dateTime).format('D/M-Y')}
             {isDesktopOrLaptop && ' - '}
-          </Date>
-          <Location>{event.location}</Location>
+          </EventSpan>
+          <EventSpanBold>{event.summary}</EventSpanBold>
+          <EventSpan>{event.location}</EventSpan>
         </ListGroupP>
       );
     }

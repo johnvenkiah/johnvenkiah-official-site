@@ -56,15 +56,17 @@ export const ModalContainer = styled.div`
   border-radius: 18px;
   box-shadow: 0 0 1rem 0 #000;
   min-height: 200px;
-  display: inherit;
+  display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
-  align-items: space-evenly;
+  align-items: stretch;
 
   @media screen and (max-width: 768px) {
     width: 80vw;
     height: 80vh;
+    max-width: 390px;
+    max-height: 600px;
     transform: translateY(-45%);
   }
 `;
@@ -113,6 +115,15 @@ export const HorRule = styled.hr`
   border-radius: 5px;
   height: 0rem;
   border: 0.5px solid #555;
+`;
+
+export const BuyLinkContainer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0 0 0.6rem;
+  margin: 0 auto;
 `;
 
 export const BuyLink = styled(Link)`

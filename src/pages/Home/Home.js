@@ -6,6 +6,7 @@ import {
   Tidal,
   ListenLink,
   ModalHeadingWrapper,
+  BuyLinkContainer,
 } from '../../components/Modal/Modal.styled';
 import {
   AlbumImg,
@@ -116,9 +117,11 @@ export default function Home({ modalOpen, setModalOpen }) {
           </ModalWrapper>
         ))}
         <HorRule />
-        <BuyLink to={data[i].buy_link} target="_blank" rel="noreferrer">
-          Buy a Copy
-        </BuyLink>
+        <BuyLinkContainer>
+          <BuyLink to={data[i].buy_link} target="_blank" rel="noreferrer">
+            Buy a Copy
+          </BuyLink>
+        </BuyLinkContainer>
       </>
     );
   };

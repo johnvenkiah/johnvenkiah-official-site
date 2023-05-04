@@ -54,11 +54,13 @@ export const ListGroupLink = styled.a`
 
 export const ListGroupP = styled.a``;
 
-export const Date = styled.span`
+export const EventSpanBold = styled.span`
   font-weight: bold;
 `;
 
-export const Location = styled.span``;
+export const EventSpan = styled.span`
+  display: block;
+`;
 
 export const EmptyOrLoading = styled.div`
   display: block;
