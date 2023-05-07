@@ -17,6 +17,7 @@ import {
 import standardsCover from '../../images/venkiah_nyvall_standards.jpg';
 import jvt3Small from '../../images/jvt3-small.jpeg';
 import Modal from '../../components/Modal';
+import Live from '../Live/live';
 import {
   HorRule,
   ModalWrapper,
@@ -145,6 +146,10 @@ export default function Home({ modalOpen, setModalOpen }) {
           }
         />
         {setHomePageContent()}
+      </SectionContainer>
+      <SectionContainer>
+        <h2>Coming Performances</h2>
+        <Live />
       </SectionContainer>
     </HomeStyled>
   );

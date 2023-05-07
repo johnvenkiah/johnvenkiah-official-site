@@ -13,9 +13,9 @@ import {
 } from './App.styled';
 import { Navbar, Burger, Heading, ScrollToTop, Background } from './components';
 import Home from './pages/Home/Home';
-import Music from './pages/music';
+import Music from './pages/Music/Music';
 import Videos from './pages/videos';
-import Live from './pages/Live/Live';
+import Live from './pages/Live/live';
 import About from './pages/about';
 import Contact from './pages/contact';
 import Developer from './pages/developer';

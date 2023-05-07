@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import moment from 'moment';
 import momentDurationFormatSetup from 'moment-duration-format';
 import { useMediaQuery } from 'react-responsive';
@@ -14,6 +15,8 @@ import {
 momentDurationFormatSetup(moment);
 
 export default function Live() {
+  const page = useLocation().pathname;
+  console.log(page);
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-width: 1224px)',
   });
@@ -107,7 +110,8 @@ export default function Live() {
     <Concerts>
       <ListGroup>
         {calState.isLoading && loadingState}
-        {events.length > 0 && eventsList}
+        {page === '/live' && events.length > 0 && eventsList}
+        {page === '/' && events.length > 0 && eventsList.slice(0, 3)}
         {calState.isEmpty && emptyState}
       </ListGroup>
     </Concerts>
