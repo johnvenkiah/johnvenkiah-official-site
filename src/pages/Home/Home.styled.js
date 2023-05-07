@@ -1,3 +1,4 @@
+import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const HomeStyled = styled.div`
@@ -37,5 +38,20 @@ export const AlbumImg = styled.img`
   transition: transform 0.3s ease-in-out;
   &:hover {
     transform: scale(1.03);
+  }
+`;
+
+export const RegularLink = styled(Link)`
+  cursor: pointer;
+  margin: 1rem auto;
+  text-align: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  transition: all 0.2s ease-in-out;
+  transform: scale(1);
+  &:hover {
+    transform: scale(1.02);
+    text-shadow: 0 0 10px #ffb337;
   }
 `;

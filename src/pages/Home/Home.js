@@ -12,6 +12,7 @@ import {
   AlbumImg,
   AlbumWrapper,
   HomeStyled,
+  RegularLink,
   SectionContainer,
 } from './Home.styled';
 import standardsCover from '../../images/venkiah_nyvall_standards.jpg';
@@ -150,6 +151,9 @@ export default function Home({ modalOpen, setModalOpen }) {
       <SectionContainer>
         <h2>Coming Performances</h2>
         <Live />
+        <RegularLink to="/live" rel="noreferrer">
+          See All Performances
+        </RegularLink>
       </SectionContainer>
     </HomeStyled>
   );
