@@ -1,69 +1,60 @@
+import { NavLink as Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Concerts = styled.div`
-  p {
-    display: block;
-    padding: 7px;
-    color: $mainLightColor;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    span {
-      text-align: center;
-    }
+export const MusicStyled = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  h2 {
+    margin: 2rem auto;
   }
 `;
 
-export const ListGroup = styled.div`
-  padding: 10px;
+export const SectionContainer = styled.div`
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
-  a,
-  p {
-    display: block;
-    padding: 7px;
-    color: $mainLightColor;
-    background-color: rgba(38, 50, 50, 0.5);
-    box-shadow: 0 0 1rem 0 #000;
-    backdrop-filter: blur(10px);
-    margin: 0.6rem auto;
-    border: 0.5px solid transparent;
-    border-radius: 9px;
+export const AlbumWrapper = styled.div`
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h3 {
+    margin: 1rem auto 2rem;
     text-align: center;
-    @media screen and (min-width: 450px) {
-      max-width: 400px;
-    }
-  }
-
-  a {
-    &:hover {
-      color: #ffb337;
-      background-color: #1a1a1a08;
-      box-shadow: 0 0 1rem 0 #8d5a2b;
-      border: 0.5px solid orange;
-      text-shadow: black 0 0 10px 5px;
-    }
+    width: 70%;
   }
 `;
 
-export const ListGroupLink = styled.a`
-  text-decoration: none;
-  transition: all 0.3s ease;
-  span {
-    display: block;
+export const AlbumImg = styled.img`
+  width: 40vh;
+  box-shadow: 0 0 15px #000;
+  transition: transform 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.03);
   }
 `;
 
-export const ListGroupP = styled.a``;
-
-export const EventSpanBold = styled.span`
-  font-weight: bold;
-`;
-
-export const EventSpan = styled.span`
-  display: block;
-`;
-
-export const EmptyOrLoading = styled.div`
-  display: block;
-  padding: 7px;
+export const RegularLink = styled(Link)`
+  cursor: pointer;
+  margin: 1rem auto;
   text-align: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  transition: all 0.2s ease-in-out;
+  transform: scale(1);
+  &:hover {
+    transform: scale(1.02);
+    text-shadow: 0 0 10px #ffb337;
+  }
 `;
