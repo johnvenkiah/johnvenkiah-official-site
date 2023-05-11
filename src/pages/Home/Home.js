@@ -26,7 +26,7 @@ import {
 } from '../../components/Modal/Modal.styled';
 import albumData from '../../components/AlbumData/AlbumData';
 
-export default function Home({ modalOpen, setModalOpen }) {
+export default function Home({ homeModalOpen, setHomeModalOpen }) {
   const [modalState, setModalState] = useState({ id: null });
 
   const deezerSvg = (
@@ -60,7 +60,7 @@ export default function Home({ modalOpen, setModalOpen }) {
           <AlbumWrapper key={i}>
             <AlbumImg
               onClick={() => {
-                setModalOpen(!modalOpen);
+                setHomeModalOpen(!homeModalOpen);
                 setModalState({ id: albumData[i].id });
               }}
               src={item.src}
@@ -133,12 +133,12 @@ export default function Home({ modalOpen, setModalOpen }) {
       <h2>Latest Releases</h2>
       <SectionContainer>
         <Modal
-          ariaHidden={modalOpen && 'true'}
-          modalOpen={modalOpen}
-          setModalOpen={setModalOpen}
+          ariaHidden={homeModalOpen && 'true'}
+          modalOpen={homeModalOpen}
+          setModalOpen={setHomeModalOpen}
           children={
             <>
-              {modalOpen &&
+              {homeModalOpen &&
                 setModalContent(
                   albumData,
                   albumData.findIndex((p) => p.id === modalState.id)

@@ -16,7 +16,6 @@ momentDurationFormatSetup(moment);
 
 export default function Live() {
   const page = useLocation().pathname;
-  console.log(page);
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-width: 1224px)',
   });

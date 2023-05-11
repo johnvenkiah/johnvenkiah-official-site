@@ -13,7 +13,7 @@ import {
 } from './App.styled';
 import { Navbar, Burger, Heading, ScrollToTop, Background } from './components';
 import Home from './pages/Home/Home';
-import Music from './pages/Music/Music';
+import Music from './pages/Music/music';
 import Videos from './pages/videos';
 import Live from './pages/Live/live';
 import About from './pages/about';
@@ -78,7 +78,12 @@ function App() {
                     <Home modalOpen={modalOpen} setModalOpen={setModalOpen} />
                   }
                 />
-                <Route path="/music" element={<Music />} />
+                <Route
+                  path="/music"
+                  element={
+                    <Music modalOpen={modalOpen} setModalOpen={setModalOpen} />
+                  }
+                />
                 <Route path="/videos" element={<Videos />} />
                 <Route path="/live" element={<Live />} />
                 <Route path="/developer" element={<Developer />} />

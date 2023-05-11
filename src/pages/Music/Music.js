@@ -21,6 +21,7 @@ import shirin22 from '../../images/shirin-22.png';
 import iJustCant from '../../images/venkiah-i-just-cant.jpeg';
 import kaalm from '../../images/kaalm.jpg';
 import jvt2_small from '../../images/jvt2-small.png';
+import tingsek_ljupet from '../../images/tingsek-ljupet.jpg';
 import Modal from '../../components/Modal';
 import {
   HorRule,
@@ -67,7 +68,7 @@ export default function Music({ modalOpen, setModalOpen }) {
       },
       {
         src: shirin22,
-        alt: "Listen to Shirins single '22'",
+        alt: "Listen to Shirin's single '22'",
         h3: 'Single: Shirin - 22 (2019)',
       },
       {
@@ -77,8 +78,13 @@ export default function Music({ modalOpen, setModalOpen }) {
       },
       {
         src: kaalm,
-        alt: "Listen to Kaalms EP 'Everything'",
+        alt: "Listen to Kaalm's EP 'Everything'",
         h3: 'EP: Kaalm - Everything (2017)',
+      },
+      {
+        src: tingsek_ljupet,
+        alt: "Listen to Tingsek's EP 'Everything'",
+        h3: 'EP: Tingsek - Live at Ljupet (2016)',
       },
     ];
 
