@@ -15,8 +15,6 @@ import {
   RegularLink,
   SectionContainer,
 } from './Home.styled';
-import standardsCover from '../../images/venkiah_nyvall_standards.jpg';
-import jvt3Small from '../../images/jvt3-small.jpeg';
 import Modal from '../../components/Modal';
 import Live from '../Live/live';
 import {
@@ -26,7 +24,7 @@ import {
 } from '../../components/Modal/Modal.styled';
 import albumData from '../../components/AlbumData/AlbumData';
 
-export default function Home({ homeModalOpen, setHomeModalOpen }) {
+export default function Home({ modalOpen, setModalOpen }) {
   const [modalState, setModalState] = useState({ id: null });
 
   const deezerSvg = (
@@ -41,36 +39,25 @@ export default function Home({ homeModalOpen, setHomeModalOpen }) {
   );
 
   const setHomePageContent = () => {
-    const listenData = [
-      {
-        src: standardsCover,
-        alt: "Link to listen to John Venkiah and Rasmus Nyvall's new album 'Standards'",
-        h3: 'John Venkiah & Rasmus Nyvall - Standards (2022)',
-      },
-      {
-        src: jvt3Small,
-        alt: "Link to listen to John Venkiah Trio's album 'On to Something Good'",
-        h3: 'John Venkiah Trio - On to Something Good (2021)',
-      },
-    ];
-
     return (
       <>
-        {listenData.map((item, i) => (
-          <AlbumWrapper key={i}>
-            <AlbumImg
-              onClick={() => {
-                setHomeModalOpen(!homeModalOpen);
-                setModalState({ id: albumData[i].id });
-              }}
-              src={item.src}
-              alt={item.alt}
-            ></AlbumImg>
-            <div>
-              <h3>{item.h3}</h3>
-            </div>
-          </AlbumWrapper>
-        ))}
+        {albumData
+          .map((item, i) => (
+            <AlbumWrapper key={i}>
+              <AlbumImg
+                onClick={() => {
+                  setModalOpen(!modalOpen);
+                  setModalState({ id: item.id });
+                }}
+                src={item.img_url}
+                alt={item.alt_attr}
+              ></AlbumImg>
+              <div>
+                <h3>{item.title}</h3>
+              </div>
+            </AlbumWrapper>
+          ))
+          .slice(0, 3)}
       </>
     );
   };
@@ -133,12 +120,12 @@ export default function Home({ homeModalOpen, setHomeModalOpen }) {
       <h2>Latest Releases</h2>
       <SectionContainer>
         <Modal
-          ariaHidden={homeModalOpen && 'true'}
-          modalOpen={homeModalOpen}
-          setModalOpen={setHomeModalOpen}
+          ariaHidden={modalOpen && 'true'}
+          modalOpen={modalOpen}
+          setModalOpen={setModalOpen}
           children={
             <>
-              {homeModalOpen &&
+              {modalOpen &&
                 setModalContent(
                   albumData,
                   albumData.findIndex((p) => p.id === modalState.id)

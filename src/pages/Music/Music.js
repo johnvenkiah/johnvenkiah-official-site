@@ -14,14 +14,6 @@ import {
   MusicStyled,
   SectionContainer,
 } from './Music.styled';
-import standardsCover from '../../images/venkiah_nyvall_standards.jpg';
-import jvt3Small from '../../images/jvt3-small.jpeg';
-import laMia from '../../images/faela-la-mia.jpg';
-import shirin22 from '../../images/shirin-22.png';
-import iJustCant from '../../images/venkiah-i-just-cant.jpeg';
-import kaalm from '../../images/kaalm.jpg';
-import jvt2_small from '../../images/jvt2-small.png';
-import tingsek_ljupet from '../../images/tingsek-ljupet.jpg';
 import Modal from '../../components/Modal';
 import {
   HorRule,
@@ -45,63 +37,20 @@ export default function Music({ modalOpen, setModalOpen }) {
   );
 
   const setMusicPageContent = () => {
-    const listenData = [
-      {
-        src: laMia,
-        alt: "Listen to Faela's new single 'La Mia'",
-        h3: 'Single: Faela - La Mia (2023)',
-      },
-      {
-        src: standardsCover,
-        alt: "Listen to John Venkiah and Rasmus Nyvall's new album 'Standards'",
-        h3: 'John Venkiah & Rasmus Nyvall - Standards (2022)',
-      },
-      {
-        src: jvt3Small,
-        alt: "Listen to John Venkiah Trio's album 'On to Something Good'",
-        h3: 'John Venkiah Trio - On to Something Good (2021)',
-      },
-      {
-        src: iJustCant,
-        alt: "Listen to Venkiah's single '22'",
-        h3: "Single: Venkiah - I Just Can't (2019)",
-      },
-      {
-        src: shirin22,
-        alt: "Listen to Shirin's single '22'",
-        h3: 'Single: Shirin - 22 (2019)',
-      },
-      {
-        src: jvt2_small,
-        alt: "Listen to John Venkiah Trio's album 'Elevation'",
-        h3: 'John Venkiah Trio - Elevation (2017)',
-      },
-      {
-        src: kaalm,
-        alt: "Listen to Kaalm's EP 'Everything'",
-        h3: 'EP: Kaalm - Everything (2017)',
-      },
-      {
-        src: tingsek_ljupet,
-        alt: "Listen to Tingsek's EP 'Everything'",
-        h3: 'EP: Tingsek - Live at Ljupet (2016)',
-      },
-    ];
-
     return (
       <>
-        {listenData.map((item, i) => (
+        {albumData.map((item, i) => (
           <AlbumWrapper key={i}>
             <AlbumImg
               onClick={() => {
                 setModalOpen(!modalOpen);
-                setModalState({ id: albumData[i].id });
+                setModalState({ id: item.id });
               }}
-              src={item.src}
-              alt={item.alt}
+              src={item.img_url}
+              alt={item.alt_attr}
             ></AlbumImg>
             <div>
-              <h3>{item.h3}</h3>
+              <h3>{item.title}</h3>
             </div>
           </AlbumWrapper>
         ))}
