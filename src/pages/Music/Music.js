@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
   Spotify,
   Deezer,
@@ -24,6 +25,11 @@ import albumData from '../../components/AlbumData/AlbumData';
 
 export default function Music({ modalOpen, setModalOpen }) {
   const [modalState, setModalState] = useState({ id: null });
+  const currPage = useLocation().pathname;
+  let currAlbumData = [];
+  currPage === '/'
+    ? (currAlbumData = albumData.slice(0, 3))
+    : (currAlbumData = albumData);
 
   const deezerSvg = (
     <svg width="0" height="0">
@@ -39,7 +45,7 @@ export default function Music({ modalOpen, setModalOpen }) {
   const setMusicPageContent = () => {
     return (
       <>
-        {albumData.map((item, i) => (
+        {currAlbumData.map((item, i) => (
           <AlbumWrapper key={i}>
             <AlbumImg
               onClick={() => {
@@ -113,7 +119,7 @@ export default function Music({ modalOpen, setModalOpen }) {
 
   return (
     <MusicStyled>
-      <h2>Releases Featuring John</h2>
+      {currPage === '/music' && <h2>Releases Featuring John</h2>}
       <SectionContainer>
         <Modal
           ariaHidden={modalOpen && 'true'}
@@ -123,8 +129,8 @@ export default function Music({ modalOpen, setModalOpen }) {
             <>
               {modalOpen &&
                 setModalContent(
-                  albumData,
-                  albumData.findIndex((p) => p.id === modalState.id)
+                  currAlbumData,
+                  currAlbumData.findIndex((p) => p.id === modalState.id)
                 )}
             </>
           }

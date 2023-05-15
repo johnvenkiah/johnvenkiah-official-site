@@ -17,30 +17,6 @@ export const SectionContainer = styled.div`
   justify-content: center;
 `;
 
-export const AlbumWrapper = styled.div`
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  h3 {
-    margin: 1rem auto 2rem;
-    text-align: center;
-    width: 70%;
-  }
-`;
-
-export const AlbumImg = styled.img`
-  width: 40vh;
-  box-shadow: 0 0 15px #000;
-  transition: transform 0.3s ease-in-out;
-  &:hover {
-    transform: scale(1.03);
-  }
-`;
-
 export const RegularLink = styled(Link)`
   cursor: pointer;
   margin: 1rem auto;
