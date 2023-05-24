@@ -94,7 +94,7 @@ export default function Music({ modalOpen, setModalOpen }) {
           <img src={data[i].img_url} alt={data[i].alt_attr} />
           <div>
             <small>Listen to</small>
-            <p>'{data[i].title}'</p>
+            <p>{data[i].title.slice(0, -7)}</p>
             <small>on</small>
           </div>
         </ModalHeadingWrapper>

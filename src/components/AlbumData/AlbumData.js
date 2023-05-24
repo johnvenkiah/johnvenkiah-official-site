@@ -1,6 +1,6 @@
 import standardsCover from '../../images/venkiah_nyvall_standards.jpg';
 import jvt3Small from '../../images/jvt3-small.jpeg';
-import laMia from '../../images/faela-la-mia.jpg';
+import faelaLab from '../../images/cover_faela_lab.jpg';
 import shirin22 from '../../images/shirin-22.png';
 import iJustCant from '../../images/venkiah-i-just-cant.jpeg';
 import kaalm from '../../images/kaalm.jpg';
@@ -9,16 +9,17 @@ import tingsek_ljupet from '../../images/tingsek-ljupet.jpg';
 
 const albumData = [
   {
-    id: 'faela_la_mia',
-    img_url: laMia,
-    alt_attr: 'Single cover: Faela - "La Mia"',
-    title: 'Single: Faela - La Mia (2023)',
+    id: 'latin_animal_beats',
+    img_url: faelaLab,
+    alt_attr: 'Faela Latin Animal Beats Cover',
+    title: 'Faela - Latin Animal Beats (2023)',
     spotify_url:
-      'https://open.spotify.com/track/6ia9tPscGwHElncxfYYlP0?si=12f5a13766244b24',
-    apple_url: 'https://music.apple.com/se/album/la-mia-single/1679563340',
-    tidal_url: 'https://tidal.com/browse/album/285817842',
-    deezer_url: 'https://deezer.page.link/WVd9mLpZtN77nXyGA',
-    buy_link: 'https://www.faela-band.com/',
+      'https://open.spotify.com/album/0mwzwuxBWgSku8TAt4MDNf?si=MAdyp3EqS426pvJr0m8UNA',
+    apple_url: 'https://music.apple.com/us/album/latin-animal-beats/1679545427',
+    tidal_url: 'https://tidal.com/browse/album/285802621',
+    deezer_url: 'https://deezer.page.link/ZUEqoMfovCs78WsV6',
+    buy_link:
+      'https://www.havtornrecords.com/store/faela-latin-animal-beats-cd',
   },
   {
     id: 'standards',

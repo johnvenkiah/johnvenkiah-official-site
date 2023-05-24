@@ -35,9 +35,9 @@ export const ModalStyled = styled.div`
 
   p {
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding: 0;
-    margin: 0 auto;
+    margin: 0.2rem auto;
   }
 `;
 
@@ -89,6 +89,7 @@ export const ModalHeadingWrapper = styled.div`
   justify-content: space-around;
   align-items: center;
   margin: 0.2rem 0.2rem 0.2rem;
+  height: 33%;
   padding: 0.5rem;
   background-color: #1129;
   font-size: 1.8rem;
@@ -106,7 +107,7 @@ export const ModalHeadingWrapper = styled.div`
   }
 
   small {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
   }
 `;
 
