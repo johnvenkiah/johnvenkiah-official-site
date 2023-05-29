@@ -4,3 +4,4 @@ export { default as Modal } from './Modal';
 export { default as Background } from './Background';
 export { default as Heading } from './Heading';
 export { default as ScrollToTop } from './ScrollToTop';
+export { default as ContactForm } from './ContactForm';

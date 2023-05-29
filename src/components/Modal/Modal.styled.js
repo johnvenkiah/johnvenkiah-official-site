@@ -132,7 +132,7 @@ export const BuyLink = styled(Link)`
   font-weight: 600;
   width: 97%;
   max-height: 3.4rem;
-  background-color: #1a1a1a;
+  background-color: #ff880029;
   border: #77777766 0.1rem solid;
   border-radius: 12px;
   box-shadow: 0 0 1rem 0 #000;
