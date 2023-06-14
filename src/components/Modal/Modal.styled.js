@@ -49,10 +49,7 @@ export const ModalContainer = styled.div`
   text-align: center;
   transform: translateY(-50%);
   padding: 0.2rem 0.2rem 0;
-  border-top: 0.7px solid #b6b6b666;
-  border-right: 0.7px solid #8e8e8e66;
-  border-bottom: 0.7px solid #000;
-  border-left: 0.7px solid #77777766;
+  border: 0.8px solid #b6b6b666;
   border-radius: 18px;
   box-shadow: 0 0 1rem 0 #000;
   min-height: 200px;
