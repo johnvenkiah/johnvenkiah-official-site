@@ -84,6 +84,8 @@ export const ContactFormStyled = styled.div`
       background-color: transparent !important;
       border: none;
       margin: 5px auto 0;
+      width: 100%;
+      right: 0.4rem;
       > div {
         min-height: 60px;
       }
@@ -99,21 +101,25 @@ export const SuccessP = styled.p`
   background-color: #355035;
   font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
-  width: 95%;
+  width: 80vw;
   height: 11%;
+  max-height: 3.5rem;
   font-weight: 600;
   margin: 5px auto;
+  text-align: center;
   border: #77777766 0.1rem solid;
   border-radius: 12px;
   box-shadow: 0 0 1rem 0 #000;
   text-shadow: 0 0 15px black;
   padding: 0.5rem;
   display: flex;
-  position: fixed;
-  bottom: 0;
-  z-index: 50;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(10px);
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
 `;
