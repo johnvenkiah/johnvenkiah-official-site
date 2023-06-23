@@ -14,7 +14,7 @@ import {
 import { Navbar, Burger, Heading, ScrollToTop, Background } from './components';
 import Home from './pages/Home/Home';
 import Music from './pages/Music/music';
-import Videos from './pages/videos';
+import Videos from './pages/Videos/Videos';
 import Live from './pages/Live/live';
 import About from './pages/about';
 import Contact from './pages/contact';
