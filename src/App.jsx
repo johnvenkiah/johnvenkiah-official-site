@@ -16,7 +16,7 @@ import Home from './pages/Home/Home';
 import Music from './pages/Music/music';
 import Videos from './pages/Videos/Videos';
 import Live from './pages/Live/live';
-import About from './pages/about';
+import About from './pages/About/about.js';
 import Contact from './pages/contact';
 import Developer from './pages/developer';
 
