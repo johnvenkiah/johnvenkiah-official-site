@@ -1,12 +1,16 @@
 // Burger.js
-import React from 'react';
+import React, { useEffect } from 'react';
 import { bool, func } from 'prop-types';
 import { StyledBurger } from './Burger.styled';
 
 const Burger = ({ open, setOpen }) => {
-  open && window.innerWidth <= 768
-    ? (document.body.style.overflow = 'hidden')
-    : (document.body.style.overflow = 'auto');
+  useEffect(() => {
+    if (open && window.innerWidth <= 768) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [open]);
   if (window.innerWidth > 768) {
     return null;
   }

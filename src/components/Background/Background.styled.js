@@ -10,7 +10,7 @@ export const BackgroundImg = styled.img`
   position: fixed;
   z-index: -1;
   transition-property: height, min-height;
-  transition-duration: 0.6s;
+  transition-duration: 0.1s;
   transition-delay: 0.1s;
-  transition-timing-function: ease-in;
+  transition-timing-function: ease-in-out;
 `;

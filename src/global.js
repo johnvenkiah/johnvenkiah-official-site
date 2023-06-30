@@ -21,6 +21,7 @@ export const GlobalStyles = createGlobalStyle`
   h1 {
     font-size: 2.4rem;
     margin: .6rem 0;
+    text-shadow: none;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -28,7 +29,7 @@ export const GlobalStyles = createGlobalStyle`
     text-transform: uppercase;
   }
 
-  h1, h2, h3, h4, h5, h6, p, span, a, li {
+  h2, h3, h4, h5, h6, p, span, a, li {
     text-shadow: 0 0 15px black;
   }
 
