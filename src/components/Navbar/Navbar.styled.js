@@ -33,20 +33,35 @@ export const NavMenu = styled.div`
   @media screen and (max-width: 768px) {
     backdrop-filter: blur(10px);
     background-color: rgba(38, 50, 50, 0.5);
+    height: 100vh;
+    overflow-y: auto;
+    padding-top: 45px;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
+    opacity: ${({ open }) => (open ? '1' : '0')};
+    flex-direction: column;
+    justify-content: center;
   }
 
   ul {
     display: flex;
     list-style-type: none;
     height: 100%;
-    padding: 0;
+    padding: 1rem 0;
     @media screen and (max-width: 768px) {
       flex-direction: column;
+      justify-content: space-evenly;
+    }
+    @media screen and (max-height: 450px) {
+      flex-direction: row;
       justify-content: space-evenly;
     }
 
     li {
       margin: 0 auto;
+      @media screen and (max-width: 768px) and (orientation: portrait) {
+        /* height: 10%; */
+      }
       a {
         transition: all 0.2s ease;
         &:hover {
@@ -55,15 +70,6 @@ export const NavMenu = styled.div`
         }
       }
     }
-  }
-  @media screen and (max-width: 768px) {
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
-    opacity: ${({ open }) => (open ? '1' : '0')};
-    height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 85px;
   }
 `;
 

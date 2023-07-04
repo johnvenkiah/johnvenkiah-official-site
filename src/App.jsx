@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { IoIosArrowUp } from 'react-icons/io';
@@ -42,8 +42,25 @@ function App() {
     );
   }
 
-  window.addEventListener('resize', setDocHeight());
-  window.addEventListener('orientationchange', setDocHeight());
+  // window.addEventListener('resize', setDocHeight());
+  // window.addEventListener('orientationchange', setDocHeight());
+
+  useEffect(() => {
+    // Listen to the resize event to update the layout when the address bar height changes
+    window.addEventListener('resize', setDocHeight);
+    window.addEventListener('orientationchange', setDocHeight);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', setDocHeight);
+      window.removeEventListener('orientationchange', setDocHeight);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Update the layout on initial load
+    setDocHeight();
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
