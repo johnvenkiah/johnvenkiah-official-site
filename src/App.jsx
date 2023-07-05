@@ -42,9 +42,6 @@ function App() {
     );
   }
 
-  // window.addEventListener('resize', setDocHeight());
-  // window.addEventListener('orientationchange', setDocHeight());
-
   useEffect(() => {
     // Listen to the resize event to update the layout when the address bar height changes
     window.addEventListener('resize', setDocHeight);

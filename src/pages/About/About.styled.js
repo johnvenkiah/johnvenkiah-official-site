@@ -10,11 +10,15 @@ export const AboutWrapper = styled.div`
     padding: 1rem;
     background-color: white;
   }
+
+  p {
+    max-width: 700px;
+  }
 `;
 
 export const Card = styled.div`
   width: 100%;
-  max-width: 500px;
+  max-width: 700px;
   padding: 1rem;
   margin: 1rem;
   background-color: #55555550;
@@ -30,6 +34,7 @@ export const Italics = styled.p`
 `;
 
 export const AboutImage = styled.img`
+  max-width: 700px;
   top: 50vh;
   left: 0;
   width: 100%;
@@ -41,6 +46,9 @@ export const AboutImage = styled.img`
   transition-timing-function: ease-in-out;
   margin: 0 0;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  @media screen and (min-width: 900px) {
+    max-height: 250px;
+  }
 `;
 
 export const WindowContainer = styled.div`
