@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 
-export const AboutWrapper = styled.div`
+export const AboutContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  p {
+    text-align: justify;
+  }
 
   em {
     width: 100%;
@@ -46,35 +49,34 @@ export const AboutImage = styled.img`
   transition-timing-function: ease-in-out;
   margin: 0 0;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
-  @media screen and (min-width: 900px) {
-    max-height: 250px;
+`;
+
+export const SectionContainer = styled.div`
+  display: flex;
+  max-width: 700px;
+  flex-direction: column;
+  align-items: center;
+  p,
+  img {
+    margin: 2rem 1rem;
+    width: 100%;
   }
 `;
 
-export const WindowContainer = styled.div`
-  position: fixed;
-  top: 50vh;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: auto;
-  perspective: 1000px; /* Optional: Adds 3D perspective */
-`;
-
-export const WindowContent = styled.div`
-  position: relative;
-  width: 100%;
-  height: 3000px; /* Adjust the height as needed */
-  transform-style: preserve-3d; /* Optional: Enables 3D transforms */
-`;
-
-export const WindowFrame = styled.div`
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100vh;
-  background: url('../.../images/jvt2-small.png') no-repeat center center fixed;
-  background-size: cover;
-  transform: translateZ(0); /* Optional: Applies 3D transform */
+export const SectionWrapper = styled.div`
+  align-items: center;
+  display: flex;
+  max-width: 700px;
+  flex-direction: column;
+  @media screen and (min-width: 900px) {
+    flex-direction: row;
+  }
+  p,
+  img {
+    margin: 2rem 1rem;
+    width: 100%;
+    @media screen and (min-width: 900px) {
+      width: 50%;
+    }
+  }
 `;
