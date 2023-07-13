@@ -1,4 +1,5 @@
 import IframeEmbed from '../../components/IframeEmbed';
+import { VideosWrapper } from './Videos.styled';
 
 export default function Videos() {
   const vidData = [
@@ -40,7 +41,7 @@ export default function Videos() {
   ];
 
   return (
-    <div>
+    <VideosWrapper>
       {vidData.map((item, i) => (
         <IframeEmbed
           key={i}
@@ -49,7 +50,7 @@ export default function Videos() {
           text={item.text}
         />
       ))}
-    </div>
+    </VideosWrapper>
   );
 }
 

@@ -9,7 +9,6 @@ import {
 import johnBlackClav from '../../images/background/john_black_clav.png';
 import soloWinter from '../../images/solo_winter.jpg';
 import trioKm from '../../images/trio_km.jpg';
-import tingsek_kb from '../../images/tingsek_kb.jpeg';
 
 export default function About() {
   return (
