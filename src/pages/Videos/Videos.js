@@ -1,17 +1,22 @@
 import IframeEmbed from '../../components/IframeEmbed';
-import { VideosWrapper } from './Videos.styled';
+import { VideosContainer } from './Videos.styled';
 
 export default function Videos() {
   const vidData = [
     {
-      title: 'The Gospel of John',
+      title: 'John Venkiah Trio - The Gospel of John',
       url: 'HGtTdz4Ec7k',
-      text: 'John Venkiah Trio - Live at Fasching',
+      text: 'Live at Fasching Stockholm',
     },
     {
-      title: "I Just Can't",
+      title: "Venkiah - I Just Can't",
       url: 'ZxanNE7M_3Y',
       text: "Venkiah's debut single music video",
+    },
+    {
+      title: 'Faela - Junio & Julia',
+      url: '4LGCXLC9Nyg',
+      text: 'Live at Moriskan, Malmö',
     },
     {
       title: 'Tingsek - Six Years',
@@ -24,14 +29,14 @@ export default function Videos() {
       text: 'Live at Skissernas Museum, Lund, Sweden',
     },
     {
-      title: "Everything's OK, Claudia Campagnol",
+      title: "Claudia Campagnol - Everything's OK",
       url: 'jCqw382128s',
       text: 'Live from Arket Museum of Modern Art, Ishøj, Denmark',
     },
     {
-      title: 'I Think My Body Likes It',
+      title: 'Venkiah - I Think My Body Likes It',
       url: 'E6udgcN1YW0',
-      text: 'Venkiah - Music Video',
+      text: "Venkiah's second single's Music Video",
     },
     {
       title: 'Tingsek - Gas Station Gus',
@@ -41,7 +46,7 @@ export default function Videos() {
   ];
 
   return (
-    <VideosWrapper>
+    <VideosContainer>
       {vidData.map((item, i) => (
         <IframeEmbed
           key={i}
@@ -50,7 +55,7 @@ export default function Videos() {
           text={item.text}
         />
       ))}
-    </VideosWrapper>
+    </VideosContainer>
   );
 }
 

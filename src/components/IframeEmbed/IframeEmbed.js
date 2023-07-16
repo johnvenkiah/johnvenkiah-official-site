@@ -1,8 +1,12 @@
 import PropTypes from 'prop-types';
-import { ResponsiveVideo, VideoTextBox } from './IframeEmbed.styled';
+import {
+  ResponsiveVideo,
+  VideoTextBox,
+  VideoWrapper,
+} from './IframeEmbed.styled';
 
 const IframeEmbed = ({ embedId, title, text }) => (
-  <>
+  <VideoWrapper>
     <ResponsiveVideo key={embedId}>
       <iframe
         width="853"
@@ -18,7 +22,7 @@ const IframeEmbed = ({ embedId, title, text }) => (
       <h3>{title}</h3>
       <p>{text}</p>
     </VideoTextBox>
-  </>
+  </VideoWrapper>
 );
 
 IframeEmbed.propTypes = {
