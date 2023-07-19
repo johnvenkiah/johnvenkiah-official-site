@@ -34,7 +34,11 @@ const Background = () => {
       key={pathname}
     >
       <BackgroundImg
-        src={backgroundImages[pathname]}
+        // src={backgroundImages[pathname]}
+        style={{
+          background: `linear-gradient(transparent, black 95%), url(${backgroundImages[pathname]})
+        no-repeat center center/cover fixed`,
+        }}
         alt="background"
         key={pathname}
       />
