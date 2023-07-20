@@ -58,7 +58,7 @@ const albumData = [
     tidal_url: 'https://tidal.com/browse/album/108982559',
     deezer_url: 'https://deezer.page.link/cYuFkMntdE2NFovE6',
     buy_link:
-      'https://music.apple.com/se/album/i-just-cant-single/1470167311?l=en',
+      'https://music.apple.com/se/album/i-just-cant-single/1470167311?l=en-GB',
   },
   {
     id: 'shirin_22',
@@ -70,7 +70,7 @@ const albumData = [
     apple_url: 'https://music.apple.com/us/album/22/1563136581',
     tidal_url: 'https://listen.tidal.com/album/179057227',
     deezer_url: 'https://www.deezer.com/en/album/218585872',
-    buy_link: '',
+    buy_link: 'https://music.apple.com/se/album/22-single/1449234054?l=en-GB',
   },
   {
     id: 'jvt_2',
@@ -82,7 +82,7 @@ const albumData = [
     apple_url: 'https://music.apple.com/us/album/elevation/1559814926',
     tidal_url: 'https://listen.tidal.com/album/178239803',
     deezer_url: 'https://www.deezer.com/en/album/217116512',
-    buy_link: 'http://www.imogena.se/catalogue/cd.php?catid=IGCD%20234',
+    buy_link: 'http://www.imogena.se/catalogue/cd.php?catid=IGCD%20228',
   },
   {
     id: 'kaalm',
@@ -94,7 +94,8 @@ const albumData = [
     apple_url: 'https://music.apple.com/us/album/everything/1557307111',
     tidal_url: 'https://listen.tidal.com/album/176887626',
     deezer_url: 'https://www.deezer.com/en/album/210065482',
-    buy_link: '',
+    buy_link:
+      'https://music.apple.com/se/album/everything-ep/1502947738?l=en-GB',
   },
   {
     id: 'tingsek_ljupet',
@@ -107,7 +108,8 @@ const albumData = [
       'https://music.apple.com/us/album/live-at-ljupet-sessions-2016/1193743632',
     tidal_url: 'https://listen.tidal.com/album/67899961',
     deezer_url: 'https://www.deezer.com/en/album/14625830',
-    buy_link: '',
+    buy_link:
+      'https://music.apple.com/se/album/live-at-ljupet-sessions-2016-single/1364427600?l=en-GB',
   },
 ];
 

@@ -57,9 +57,9 @@ const Portfolio = () => {
     <>
       <PortfolioContainer>
         <p>
-          In February 2022, I received my Diploma in Full Stack Web Development,
-          studying an intensive course at Code Institute, in which I passed with
-          distinction.
+          In February 2022, I received my Diploma in Full Stack Software
+          Development, studying an intensive course at Code Institute, in which
+          I passed with distinction.
         </p>
         <p>
           At the moment I am employed at IBM CIC as an IT Specialist aside from

@@ -2,7 +2,11 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import FriendlyCaptcha from '../FriendlyCaptcha';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ContactFormStyled as Form, SuccessP } from './ContactForm.styled';
+import {
+  ContactWrapper,
+  ContactFormStyled as Form,
+  SuccessP,
+} from './ContactForm.styled';
 
 export default function ContactForm() {
   const [state, setState] = useState({
@@ -64,32 +68,31 @@ export default function ContactForm() {
   };
 
   return (
-    <>
-      <div>
-        <AnimatePresence>
-          {result && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.3 }}
-              exit={{ opacity: 0 }}
-              key={result}
+    <ContactWrapper>
+      <AnimatePresence>
+        {result && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+            exit={{ opacity: 0 }}
+            key={result}
+            style={{
+              position: 'fixed',
+              zIndex: 5000,
+            }}
+          >
+            <SuccessP
               style={{
-                position: 'fixed',
-                zIndex: 5000,
+                background: result.success ? '#35503590' : '#5c232390',
               }}
             >
-              <SuccessP
-                style={{
-                  background: result.success ? '#35503580' : '#5c232380',
-                }}
-              >
-                {result.message}
-              </SuccessP>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+              {result.message}
+            </SuccessP>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <Form>
         <h2>Contact Me</h2>
         <form onSubmit={handleSubmit}>
@@ -126,6 +129,6 @@ export default function ContactForm() {
           <FriendlyCaptcha />
         </form>
       </Form>
-    </>
+    </ContactWrapper>
   );
 }

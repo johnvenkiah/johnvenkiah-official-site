@@ -1,11 +1,22 @@
 import styled from 'styled-components';
 
+export const ContactWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  @media screen and (min-width: 1024px) {
+    justify-content: end;
+    height: 75vh;
+  }
+`;
+
 export const ContactFormStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 2.5rem;
+  margin: 2.5rem auto;
   width: 90%;
   max-width: 600px;
   padding: 0.5rem;
@@ -14,6 +25,10 @@ export const ContactFormStyled = styled.div`
   border: 0.8px solid #b6b6b666;
   background-color: rgba(38, 50, 50, 0.5);
   backdrop-filter: blur(10px);
+  @media screen and (max-width: 420px) {
+    margin-top: 0;
+    padding-top: 0;
+  }
 
   h2 {
     font-size: 1.5rem;
@@ -49,7 +64,10 @@ export const ContactFormStyled = styled.div`
 
     textarea {
       resize: none;
-      height: 150px;
+      height: 105px;
+      @media screen and (min-width: 768px) {
+        height: 150px;
+      }
     }
 
     button {
@@ -69,6 +87,10 @@ export const ContactFormStyled = styled.div`
       justify-content: center;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
+      @media screen and (min-width: 768px) {
+        width: 250px;
+        margin: 0 auto;
+      }
 
       &:hover {
         color: #ffb337;
@@ -122,4 +144,9 @@ export const SuccessP = styled.p`
   left: 50%;
   transform: translate(-50%, -50%);
   position: fixed;
+  @media screen and (min-width: 768px) {
+    width: fit-content;
+    padding: 0.5rem 1.5rem;
+    margin: 0 auto;
+  }
 `;

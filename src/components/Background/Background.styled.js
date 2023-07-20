@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const BackgroundImg = styled.img`
+export const BackgroundImg = styled.div`
   top: 0;
   left: 0;
   width: 100%;

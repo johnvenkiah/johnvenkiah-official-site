@@ -37,9 +37,8 @@ const Background = () => {
         // src={backgroundImages[pathname]}
         style={{
           background: `linear-gradient(transparent, black 95%), url(${backgroundImages[pathname]})
-        no-repeat center center/cover fixed`,
+        no-repeat center center/cover`,
         }}
-        alt="background"
         key={pathname}
       />
     </motion.div>

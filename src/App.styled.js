@@ -21,6 +21,9 @@ export const ContentsWrapper = styled.div`
   padding: 0 1rem;
   background-color: rgba(0, 0, 0, 0.7);
   position: relative;
+  @media screen and (min-width: 768px) {
+    padding-top: 50px;
+  }
 `;
 
 export const ScrollElement = styled.div`
