@@ -1,5 +1,6 @@
 {
   "name": "johnvenkiah-official-site",
+  "homepage": "http://johnvenkiah.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
