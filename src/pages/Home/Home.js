@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { HomeStyled, RegularLink, SectionContainer } from './Home.styled';
-import Music from '../Music/music';
+import Music from './Music/Music';
 import Live from '../Live/live';
 
 export default function Home({ modalOpen, setModalOpen }) {
