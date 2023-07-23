@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { bool } from 'prop-types';
 import { LogoP, Nav, NavLink, NavMenu } from './Navbar.styled';
 import { MainLogo } from '../Navbar/Navbar.styled';
+import { useLocation } from 'react-router-dom';
 
 const Navbar = ({ open, setOpen, logoPIsVisible, setLogoPIsVisible }) => {
   const menuItems = {
@@ -13,6 +14,16 @@ const Navbar = ({ open, setOpen, logoPIsVisible, setLogoPIsVisible }) => {
     '/about': 'About',
     '/contact': 'Contact/Press',
   };
+
+  const location = useLocation();
+
+  useEffect(() => {
+    for (let path in menuItems) {
+      if (path === location.pathname) {
+        document.title = `John Venkiah - Musician | ${menuItems[path]}`;
+      }
+    }
+  });
 
   useEffect(() => {
     window.addEventListener('scroll', scrollHandler);

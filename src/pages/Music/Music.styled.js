@@ -18,6 +18,12 @@ export const SectionContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 75vw;
+    flex-wrap: wrap;
+  }
 `;
 
 export const AlbumWrapper = styled.div`
@@ -41,6 +47,10 @@ export const AlbumImg = styled.img`
   transition: transform 0.3s ease-in-out;
   &:hover {
     transform: scale(1.03);
+    cursor: pointer;
+  }
+  @media screen and (min-width: 768px) {
+    width: 30vh;
   }
 `;
 

@@ -2,6 +2,7 @@ import { BackgroundImg } from './Background.styled';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import johnMopaSinging from '../../images/background/mopa_singing_portrait.png';
+import johnMopaSingingLs from '../../images/background/mopa_singing.jpeg';
 import hands from '../../images/background/hands.jpg';
 import playingRearShirt from '../../images/background/playing_rear_shirt.jpg';
 import soloProfile from '../../images/background/solo_profile.jpg';
@@ -12,8 +13,13 @@ import johnFolkRock from '../../images/background/john_folk_rock_portrait.png';
 
 const Background = () => {
   const { pathname } = useLocation();
+  let johnMopa;
+  window.innerWidth / window.innerHeight > 1
+    ? (johnMopa = johnMopaSingingLs)
+    : (johnMopa = johnMopaSinging);
+
   const backgroundImages = {
-    '/': johnMopaSinging,
+    '/': johnMopa,
     '/music': hands,
     '/videos': playingRearShirt,
     '/live': johnFolkRock,
