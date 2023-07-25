@@ -27,7 +27,7 @@ export default function ContactForm() {
       });
     } else {
       axios
-        .post('http://127.0.0.1:3001/send', { ...state })
+        .post('https://gigs-be.onrender.com/send', { ...state })
         .then((response) => {
           setResult(response.data);
           setState({ name: '', email: '', subject: '', message: '' });

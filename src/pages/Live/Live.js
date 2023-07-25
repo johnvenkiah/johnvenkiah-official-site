@@ -28,7 +28,7 @@ export default function Live() {
 
   useEffect(() => {
     const getEvents = () => {
-      fetch('http://localhost:3001/events')
+      fetch('https://gigs-be.onrender.com/events')
         .then((response) => response.json())
         .then((data) => {
           let events = data;
