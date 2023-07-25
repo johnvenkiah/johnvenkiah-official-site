@@ -6,11 +6,31 @@ export const PortfolioContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 90%;
-  max-width: 700px;
+  max-width: 850px;
   justify-content: center;
   p {
     max-width: 700px;
     margin: 20px auto;
+    text-align: center;
+    a {
+      color: #ffb337;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        text-shadow: 0 0 10px #ffb337;
+      }
+    }
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    li {
+      width: 40%;
+      margin: 0 auto;
+      list-style-type: none;
+      font-weight: bold;
+      color: #ffb337;
+    }
   }
 `;
 

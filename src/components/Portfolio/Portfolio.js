@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import portfFaela from '../../images/portfolio/portf_faela.jpg';
 import portfFeelgood from '../../images/portfolio/portf_feelgood.jpg';
 import portfInstru from '../../images/portfolio/portf_instru.jpg';
@@ -63,9 +64,24 @@ const Portfolio = () => {
         </p>
         <p>
           At the moment I am employed at IBM CIC as an IT Specialist aside from
-          playing music, but am also interested in freelance work as a
-          developer. Here are some of my portfolio projects as a web developer.
-          More to come!
+          playing music, but am also interested in freelance work as a web
+          developer. I am experienced in:
+        </p>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Python</li>
+          <li>React</li>
+          <li>Django</li>
+          <li>SQL</li>
+          <li>Git</li>
+          <li>Heroku</li>
+          <li>Jira</li>
+        </ul>
+        <p>
+          Here are some of my portfolio projects as a web developer. More to
+          come! <Link to="/">Contact me</Link> for a resumé.
         </p>
         {portfolioItemMarkup}
       </PortfolioContainer>

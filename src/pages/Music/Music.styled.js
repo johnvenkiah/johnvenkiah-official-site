@@ -33,6 +33,12 @@ export const AlbumWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  @media screen and (min-width: 768px) {
+    width: 30vw;
+  }
+  @media screen and (min-width: 1400px) {
+    width: 25vw;
+  }
 
   h3 {
     margin: 1rem auto 2rem;
