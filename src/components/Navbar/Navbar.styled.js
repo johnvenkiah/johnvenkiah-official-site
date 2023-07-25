@@ -85,6 +85,15 @@ export const MainLogo = styled(Link)`
   z-index: 15;
   transform: scale(1);
   transition: transform 0.5s ease-in-out, left 0.5s ease-in-out;
+  h1 {
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover {
+    h1 {
+      text-shadow: 0 0 10px #ffb337;
+      transform: scale(1.03);
+    }
+  }
 `;
 
 export const LogoP = styled.p`
