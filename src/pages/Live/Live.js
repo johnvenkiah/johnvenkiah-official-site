@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import moment from 'moment';
 import momentDurationFormatSetup from 'moment-duration-format';
 import { useMediaQuery } from 'react-responsive';
+import { Oval } from 'react-loading-icons';
 import {
   Concerts,
   ListGroup,
@@ -29,6 +30,7 @@ export default function Live() {
   useEffect(() => {
     const getEvents = () => {
       fetch('https://gigs-be.onrender.com/events')
+        // fetch('http://localhost:3001/events')
         .then((response) => response.json())
         .then((data) => {
           let events = data;
@@ -102,6 +104,7 @@ export default function Live() {
   let loadingState = (
     <EmptyOrLoading>
       <h4>Loading dates...</h4>
+      <Oval />
     </EmptyOrLoading>
   );
 

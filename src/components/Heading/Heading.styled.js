@@ -15,14 +15,26 @@ export const H2Div = styled.div`
     font-size: 1.5rem;
     border-radius: 50%;
   }
-
-  &:hover {
-    h2 {
-      text-shadow: 0 0 10px #ffb337;
+  @media (hover: hover) {
+    &:hover {
+      h2 {
+        text-shadow: 0 0 10px #ffb337;
+      }
+      svg {
+        filter: drop-shadow(0px 0px 5px #ffb337);
+        -webkit-filter: drop-shadow(0px 0px 5px #ffb337);
+      }
     }
-    svg {
-      filter: drop-shadow(0px 0px 5px #ffb337);
-      -webkit-filter: drop-shadow(0px 0px 5px #ffb337);
+  }
+  @media (hover: none) {
+    &:active {
+      h2 {
+        text-shadow: 0 0 10px #ffb337;
+      }
+      svg {
+        filter: drop-shadow(0px 0px 5px #ffb337);
+        -webkit-filter: drop-shadow(0px 0px 5px #ffb337);
+      }
     }
   }
 `;

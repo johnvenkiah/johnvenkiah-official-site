@@ -15,8 +15,15 @@ export const PortfolioContainer = styled.div`
     a {
       color: #ffb337;
       transition: all 0.3s ease-in-out;
-      &:hover {
-        text-shadow: 0 0 10px #ffb337;
+      @media (hover: hover) {
+        &:hover {
+          text-shadow: 0 0 10px #ffb337;
+        }
+      }
+      @media (hover: none) {
+        &:active {
+          text-shadow: 0 0 10px #ffb337;
+        }
       }
     }
   }
@@ -24,8 +31,10 @@ export const PortfolioContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    padding: 0;
     li {
-      width: 40%;
+      width: 50%;
+      text-align: center;
       margin: 0 auto;
       list-style-type: none;
       font-weight: bold;

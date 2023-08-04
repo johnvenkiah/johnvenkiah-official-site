@@ -9,6 +9,11 @@ export const ContactWrapper = styled.div`
     justify-content: end;
     height: 75vh;
   }
+  h3 {
+    text-align: center;
+    font-size: 1.2rem;
+    width: 90%;
+  }
 `;
 
 export const ContactFormStyled = styled.div`
@@ -91,13 +96,23 @@ export const ContactFormStyled = styled.div`
         width: 250px;
         margin: 0 auto;
       }
-
-      &:hover {
-        color: #ffb337;
-        background-color: #1a1a1a08;
-        box-shadow: 0 0 1rem 0 #8d5a2b;
-        border: 0.1rem solid orange;
-        text-shadow: black 0 0 10px 5px;
+      @media (hover: hover) {
+        &:hover {
+          color: #ffb337;
+          background-color: #1a1a1a08;
+          box-shadow: 0 0 1rem 0 #8d5a2b;
+          border: 0.1rem solid orange;
+          text-shadow: black 0 0 10px 5px;
+        }
+      }
+      @media (hover: none) {
+        &:active {
+          color: #ffb337;
+          background-color: #1a1a1a08;
+          box-shadow: 0 0 1rem 0 #8d5a2b;
+          border: 0.1rem solid orange;
+          text-shadow: black 0 0 10px 5px;
+        }
       }
     }
 
@@ -148,5 +163,57 @@ export const SuccessP = styled.p`
     width: fit-content;
     padding: 0.5rem 1.5rem;
     margin: 0 auto;
+  }
+`;
+
+export const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3% auto 5%;
+  flex-wrap: wrap;
+  width: 90%;
+  max-width: 600px;
+  a {
+    width: 45%;
+    margin: 2%;
+    color: #fff;
+    max-height: 3.4rem;
+    background-color: #ff880029;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    border: #77777766 0.1rem solid;
+    border-radius: 12px;
+    box-shadow: 0 0 1rem 0 #000;
+    text-shadow: 0 0 15px black;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    @media screen and (min-width: 768px) {
+      width: 250px;
+      margin: 0 auto;
+    }
+    @media (hover: hover) {
+      &:hover {
+        color: #ffb337;
+        background-color: #1a1a1a08;
+        box-shadow: 0 0 1rem 0 #8d5a2b;
+        border: 0.1rem solid orange;
+        text-shadow: black 0 0 10px 5px;
+      }
+    }
+    @media (hover: none) {
+      &:active {
+        color: #ffb337;
+        background-color: #1a1a1a08;
+        box-shadow: 0 0 1rem 0 #8d5a2b;
+        border: 0.1rem solid orange;
+        text-shadow: black 0 0 10px 5px;
+      }
+    }
   }
 `;

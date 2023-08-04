@@ -40,13 +40,25 @@ export const ListGroupLink = styled.a`
   span {
     display: block;
   }
-  &:hover {
-    color: #ffb337;
-    background-color: #1a1a1a08;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 1rem 0 #8d5a2b;
-    border: 0.5px solid orange;
-    text-shadow: black 0 0 10px 5px;
+  @media (hover: hover) {
+    &:hover {
+      color: #ffb337;
+      background-color: #1a1a1a08;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 1rem 0 #8d5a2b;
+      border: 0.5px solid orange;
+      text-shadow: black 0 0 10px 5px;
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      color: #ffb337;
+      background-color: #1a1a1a08;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 1rem 0 #8d5a2b;
+      border: 0.5px solid orange;
+      text-shadow: black 0 0 10px 5px;
+    }
   }
 `;
 

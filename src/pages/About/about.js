@@ -5,10 +5,11 @@ import {
   AboutContainer,
   SectionContainer,
   SectionWrapper,
+  ImageWrapper,
 } from './About.styled';
-import johnBlackClav from '../../images/background/john_black_clav.png';
 import soloWinter from '../../images/solo_winter.jpg';
 import trioKm from '../../images/trio_km.jpg';
+import pallPortSolo from '../../images/john_pall_portrait.jpeg';
 
 export default function About() {
   return (
@@ -37,14 +38,17 @@ export default function About() {
           <p>
             Stockholm based John Venkiah was born in 1986 in London. He started
             to play the keyboard at 5 years of age, and moved to Sweden in 1998.
-            Playing mostly by ear, John listened to records his mother played
-            for him, and learnt a lot playing by ear.
+            Playing mostly by ear, John listened to records his mother played at
+            home.
           </p>
           <SectionWrapper>
-            <AboutImage
-              src={johnBlackClav}
-              alt="John playing clavinet live"
-            ></AboutImage>
+            <ImageWrapper>
+              <AboutImage
+                src={pallPortSolo}
+                alt="John playing the piano at Palladium in Malmö"
+              ></AboutImage>
+              <small>Photo: Tobias Annerfeldt</small>
+            </ImageWrapper>
             <p>
               As he grew into his teens, musicianship became a bigger part of
               his life. John began writing his own music at the age of 14,
@@ -54,13 +58,6 @@ export default function About() {
             </p>
           </SectionWrapper>
         </SectionContainer>
-        {/* <p>
-          As he grew into his teens, musicianship became a bigger part of his
-          life. John began writing his own music at the age of 14, experimenting
-          with different influences, including soul, Motown and jazz. He began
-          studying music at high school, where he met fellow musicians and
-          started his first bands.
-        </p> */}
         <SectionWrapper>
           <p>
             John took his Bachelor's degree in jazz piano at the Malmö Academy
@@ -72,10 +69,13 @@ export default function About() {
             their debut album Things Change (2014, Volenza), not to mention
             continuous inspiration and coaching.
           </p>
-          <AboutImage
-            src={soloWinter}
-            alt="Closeup of John outdoors in winter"
-          ></AboutImage>
+          <ImageWrapper>
+            <AboutImage
+              src={soloWinter}
+              alt="Closeup of John outdoors in winter"
+            ></AboutImage>
+            <small>Photo: Niclas Tilosius</small>
+          </ImageWrapper>
         </SectionWrapper>
         <SectionContainer>
           <p>
@@ -84,10 +84,13 @@ export default function About() {
             Fitzgerald, Chick Corea, Chet Baker, Stevie Wonder, Michael Jackson,
             and many more.
           </p>
-          <AboutImage
-            src={trioKm}
-            alt="John Venkiah Trio live with Karl-Martin Almqvist"
-          ></AboutImage>
+          <ImageWrapper>
+            <AboutImage
+              src={trioKm}
+              alt="John Venkiah Trio live with Karl-Martin Almqvist"
+            ></AboutImage>
+            <small>Photo: Tobias Annerfeldt</small>
+          </ImageWrapper>
         </SectionContainer>
         <Card>
           <Italics>

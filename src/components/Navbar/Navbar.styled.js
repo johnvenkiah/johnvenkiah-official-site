@@ -63,14 +63,19 @@ export const NavMenu = styled.div`
 
     li {
       margin: 0 auto;
-      @media screen and (max-width: 768px) and (orientation: portrait) {
-        /* height: 10%; */
-      }
       a {
         transition: all 0.2s ease;
-        &:hover {
-          text-shadow: 0 0 10px #ffb337;
-          transform: scale(1.03);
+        @media (hover: hover) {
+          &:hover {
+            text-shadow: 0 0 10px #ffb337;
+            transform: scale(1.03);
+          }
+        }
+        @media (hover: none) {
+          &:active {
+            text-shadow: 0 0 10px #ffb337;
+            transform: scale(1.03);
+          }
         }
       }
     }
@@ -88,10 +93,20 @@ export const MainLogo = styled(Link)`
   h1 {
     transition: all 0.3s ease-in-out;
   }
-  &:hover {
-    h1 {
-      text-shadow: 0 0 10px #ffb337;
-      transform: scale(1.03);
+  @media (hover: hover) {
+    &:hover {
+      h1 {
+        text-shadow: 0 0 10px #ffb337;
+        transform: scale(1.03);
+      }
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      h1 {
+        text-shadow: 0 0 10px #ffb337;
+        transform: scale(1.03);
+      }
     }
   }
 `;

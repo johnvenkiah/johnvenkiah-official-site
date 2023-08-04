@@ -28,8 +28,15 @@ export const ModalStyled = styled.div`
     border: none;
     background: transparent;
     transition: transform 0.2s ease-in-out;
-    &:hover {
-      transform: scale(1.1);
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+    @media (hover: none) {
+      &:active {
+        transform: scale(1.1);
+      }
     }
   }
 
@@ -140,12 +147,23 @@ export const BuyLink = styled(Link)`
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 
-  &:hover {
-    color: #ffb337;
-    background-color: #1a1a1a08;
-    box-shadow: 0 0 1rem 0 #8d5a2b;
-    border: 0.1rem solid orange;
-    text-shadow: black 0 0 10px 5px;
+  @media (hover: hover) {
+    &:hover {
+      color: #ffb337;
+      background-color: #1a1a1a08;
+      box-shadow: 0 0 1rem 0 #8d5a2b;
+      border: 0.1rem solid orange;
+      text-shadow: black 0 0 10px 5px;
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      color: #ffb337;
+      background-color: #1a1a1a08;
+      box-shadow: 0 0 1rem 0 #8d5a2b;
+      border: 0.1rem solid orange;
+      text-shadow: black 0 0 10px 5px;
+    }
   }
 `;
 export const ListenLink = styled(Link)`
@@ -159,13 +177,25 @@ export const ListenLink = styled(Link)`
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 
-  &:hover {
-    color: #ffb337;
-    background-color: #1a1a1a08;
-    box-shadow: 0 0 1rem 0 #8d5a2b;
-    border: 0.5px solid orange;
-    text-shadow: black 0 0 10px 5px;
-    scale: 1.02;
+  @media (hover: hover) {
+    &:hover {
+      color: #ffb337;
+      background-color: #1a1a1a08;
+      box-shadow: 0 0 1rem 0 #8d5a2b;
+      border: 0.5px solid orange;
+      text-shadow: black 0 0 10px 5px;
+      scale: 1.02;
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      color: #ffb337;
+      background-color: #1a1a1a08;
+      box-shadow: 0 0 1rem 0 #8d5a2b;
+      border: 0.5px solid orange;
+      text-shadow: black 0 0 10px 5px;
+      scale: 1.02;
+    }
   }
   p {
     font-size: 0.8rem;

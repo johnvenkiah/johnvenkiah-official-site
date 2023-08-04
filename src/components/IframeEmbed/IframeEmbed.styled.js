@@ -17,11 +17,17 @@ export const ResponsiveVideo = styled.div`
   border-radius: 8px;
   transition: all 0.4s cubic-bezier(0.69, 0.07, 0.19, 0.88);
   box-shadow: 0 0 15px #000;
-  &:hover {
-    box-shadow: 0 0 25px #000;
-    transform: scale(1.007);
-    @media screen and (min-width: 1024px) {
-      transform: scale(1);
+
+  @media (hover: hover) {
+    &:hover {
+      box-shadow: 0 0 25px #000;
+      transform: scale(1.007);
+    }
+  }
+  @media (hover: none) {
+    &:hover {
+      box-shadow: 0 0 25px #000;
+      transform: scale(1.02);
     }
   }
 

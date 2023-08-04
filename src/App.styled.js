@@ -18,7 +18,7 @@ export const ContentsWrapper = styled.div`
   width: 100%;
   min-height: 100vh;
   margin-top: 75vh;
-  padding: 0 1rem;
+  padding: 0 1rem 3vh;
   background-color: rgba(0, 0, 0, 0.7);
   position: relative;
   @media screen and (min-width: 768px) {
@@ -50,15 +50,28 @@ export const ScrollElement = styled.div`
     font-size: 1.5rem;
     transition: all 0.2s ease-in-out;
   }
-
-  &:hover {
-    transform: scale(1.03);
-    p {
-      text-shadow: 0 0 10px #ffb337;
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.03);
+      p {
+        text-shadow: 0 0 10px #ffb337;
+      }
+      svg {
+        filter: drop-shadow(0px 0px 5px #ffb337);
+        -webkit-filter: drop-shadow(0px 0px 5px #ffb337);
+      }
     }
-    svg {
-      filter: drop-shadow(0px 0px 5px #ffb337);
-      -webkit-filter: drop-shadow(0px 0px 5px #ffb337);
+  }
+  @media (hover: none) {
+    &:active {
+      transform: scale(1.03);
+      p {
+        text-shadow: 0 0 10px #ffb337;
+      }
+      svg {
+        filter: drop-shadow(0px 0px 5px #ffb337);
+        -webkit-filter: drop-shadow(0px 0px 5px #ffb337);
+      }
     }
   }
 `;

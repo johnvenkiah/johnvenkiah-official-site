@@ -35,10 +35,21 @@ export const Card = styled.div`
 export const Italics = styled.p`
   font-style: italic;
 `;
-
-export const AboutImage = styled.img`
+export const ImageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
   max-width: 700px;
   top: 50vh;
+  width: 100%;
+  small {
+    font-size: 0.6rem;
+    margin: 0 1rem;
+  }
+`;
+
+export const AboutImage = styled.img`
   left: 0;
   width: 100%;
   object-fit: cover;

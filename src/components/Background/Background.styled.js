@@ -14,3 +14,21 @@ export const BackgroundImg = styled.div`
   transition-delay: 0.1s;
   transition-timing-function: ease-in-out;
 `;
+
+export const Footer = styled.div`
+  z-index: 15;
+  width: 100%;
+  height: 3vh;
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  left: 0;
+  small {
+    position: absolute;
+    left: 2rem;
+  }
+  p {
+    margin: 0 auto;
+    text-align: center;
+  }
+`;

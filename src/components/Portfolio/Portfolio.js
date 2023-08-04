@@ -81,7 +81,7 @@ const Portfolio = () => {
         </ul>
         <p>
           Here are some of my portfolio projects as a web developer. More to
-          come! <Link to="/">Contact me</Link> for a resumé.
+          come! <Link to="/contact">Contact me</Link> for a resumé.
         </p>
         {portfolioItemMarkup}
       </PortfolioContainer>
