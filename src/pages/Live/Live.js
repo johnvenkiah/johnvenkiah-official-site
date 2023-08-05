@@ -93,23 +93,32 @@ export default function Live() {
 
   let emptyState = (
     <EmptyOrLoading>
-      <h3>No gigs currently in our calendar.</h3>
+      <h3>No gigs currently in my calendar.</h3>
       <p>
         We are updating it continuously, so it may currently be under
-        maintenance. Please contact us if you have any queries!
+        maintenance. Please contact me if you have any queries.
       </p>
     </EmptyOrLoading>
   );
 
   let loadingState = (
     <EmptyOrLoading>
-      <h4>Loading dates...</h4>
+      <h4>
+        Loading dates. This might take a few secs the first time you load the
+        page.
+      </h4>
       <Oval />
     </EmptyOrLoading>
   );
+  let consertsStyle;
+  if (page === '/live') {
+    consertsStyle = {
+      height: '75vh',
+    };
+  }
 
   return (
-    <Concerts>
+    <Concerts style={consertsStyle}>
       <ListGroup>
         {calState.isLoading && loadingState}
         {page === '/live' && events.length > 0 && eventsList}

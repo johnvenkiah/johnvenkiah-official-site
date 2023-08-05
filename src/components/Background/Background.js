@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BackgroundImg, Footer } from './Background.styled';
+import { BackgroundImg } from './Background.styled';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import johnMopaSinging from '../../images/background/mopa_singing_portrait.png';
@@ -40,15 +40,6 @@ const Background = () => {
     '/contact': soloProfile,
   };
 
-  let photographer;
-  if (pathname === '/') {
-    photographer = 'Sascha Kajic';
-  } else if (pathname === '/live') {
-    photographer = 'Tobias Annerfeldt';
-  } else {
-    photographer = 'Stefan Isaksson';
-  }
-
   const style = {
     boxShadow: 'inset 0 0 50px #000',
   };
@@ -76,10 +67,6 @@ const Background = () => {
           key={pathname}
         />
       </motion.div>
-      <Footer>
-        <small>Photo: {photographer}</small>
-        <p>© John Venkiah 2023</p>
-      </Footer>
     </>
   );
 };

@@ -39,13 +39,13 @@ export const ImageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: center;
   max-width: 700px;
-  top: 50vh;
   width: 100%;
+  margin: 1rem;
   small {
     font-size: 0.6rem;
-    margin: 0 1rem;
+    margin: 0.2rem 0;
   }
 `;
 
@@ -69,7 +69,7 @@ export const SectionContainer = styled.div`
   align-items: center;
   p,
   img {
-    margin: 2rem 1rem;
+    margin: 1rem;
     width: 100%;
   }
 `;
@@ -80,14 +80,32 @@ export const SectionWrapper = styled.div`
   max-width: 700px;
   flex-direction: column;
   @media screen and (min-width: 900px) {
-    flex-direction: row;
+    /* flex-direction: row; */
   }
   p,
   img {
     margin: 2rem 1rem;
     width: 100%;
     @media screen and (min-width: 900px) {
-      width: 50%;
+      /* width: 50%; */
     }
+  }
+`;
+
+export const SectionWrapperRow = styled.div`
+  align-items: center;
+  display: flex;
+  max-width: 700px;
+  flex-direction: row;
+  @media screen and (orientation: portrait) {
+    flex-direction: column;
+  }
+  img {
+    height: 30vh;
+    margin: 0;
+    padding: 0;
+  }
+  div {
+    margin: 1rem 0;
   }
 `;

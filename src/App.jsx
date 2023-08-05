@@ -19,6 +19,7 @@ import Live from './pages/Live/Live';
 import About from './pages/About/about.js';
 import Contact from './pages/contact';
 import Developer from './pages/developer';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -108,6 +109,7 @@ function App() {
                 <IoIosArrowUp />
                 <p>To top</p>
               </ScrollElement>
+              <Footer />
             </ContentsWrapper>
           </div>
         </MainContainer>
