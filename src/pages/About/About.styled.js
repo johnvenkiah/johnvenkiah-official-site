@@ -72,6 +72,17 @@ export const SectionContainer = styled.div`
     margin: 1rem;
     width: 100%;
   }
+  a {
+    color: #ffb337;
+    transform: scale(1);
+    transition: all 0.2s ease-in-out;
+    @media (hover: hover) {
+      &:hover {
+        text-shadow: 0 0 10px #fff;
+        transform: scale(1.03);
+      }
+    }
+  }
 `;
 
 export const SectionWrapper = styled.div`
@@ -88,6 +99,17 @@ export const SectionWrapper = styled.div`
     width: 100%;
     @media screen and (min-width: 900px) {
       /* width: 50%; */
+    }
+  }
+  a {
+    color: #ffb337;
+    transform: scale(1);
+    transition: all 0.2s ease-in-out;
+    @media (hover: hover) {
+      &:hover {
+        text-shadow: 0 0 10px #fff;
+        transform: scale(1.1);
+      }
     }
   }
 `;

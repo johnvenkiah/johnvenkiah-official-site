@@ -12,6 +12,7 @@ import soloWinter from '../../images/solo_winter.jpg';
 import trioKm from '../../images/trio_km.jpg';
 import faelaPennabilli from '../../images/lorenzo_sbrenna_faela.jpg';
 import heltOff from '../../images/heltoff_malmofestivalen.png';
+import { Link } from 'react-router-dom';
 
 export default function About() {
   return (
@@ -50,13 +51,21 @@ export default function About() {
           <p>
             John took his Bachelor's degree in jazz piano at the Malmö Academy
             of Music in 2012, where he met and learned from renown Swedish
-            pianist Jan Lundgren. Since then he has worked as a freelancing
-            musician, playing in different constellations and genres, on big
-            stages and small, in Sweden and around Europe.
+            pianist{' '}
+            <Link
+              to="https://janlundgren.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Jan Lundgren
+            </Link>
+            . Since then he has worked as a freelancing musician, playing in
+            different constellations and genres, on big stages and small, in
+            Sweden and around Europe.
           </p>
         </SectionWrapper>
         <SectionWrapperRow>
-          <ImageWrapper>
+          <ImageWrapper style={{ marginRight: '1rem' }}>
             <AboutImage
               src={faelaPennabilli}
               alt="Faela live in Pennabilli, Italy"
@@ -65,7 +74,7 @@ export default function About() {
               Faela live in Pennabilli, 2016. Photo: Lorenzo Sbrenna
             </small>
           </ImageWrapper>
-          <ImageWrapper>
+          <ImageWrapper style={{ marginLeft: '1rem' }}>
             <AboutImage
               src={heltOff}
               alt="Helt Off, live at Malmöfestivalen 2016"
@@ -78,10 +87,83 @@ export default function About() {
         <SectionContainer>
           <p>
             John Venkiah plays regularly with several groups and artists, for
-            example Shirin and Faela, and has released three albums with his
-            trio John Venkiah Trio. John has also shared the stage with the
-            likes of Malmö Symphony Orchestra, Tingsek, Carola, Allen Stone,
-            Timbuktu, Sam Ryder, Helt Off, Sarah Dawn Finer and many more.
+            example{' '}
+            <Link
+              to="https://allthingslive.se/artist/shirin"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Shirin
+            </Link>{' '}
+            and{' '}
+            <Link
+              to="https://www.faela-band.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Faela
+            </Link>
+            , and has released three albums with his own group{' '}
+            <Link
+              to="https://www.facebook.com/JohnVenkiahTrio/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              John Venkiah Trio
+            </Link>
+            . John has also shared the stage with the likes of{' '}
+            <Link
+              to="https://malmolive.se/en/mso"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Malmö Symphony Orchestra
+            </Link>
+            ,{' '}
+            <Link to="http://tingsek.com/" target="_blank" rel="noreferrer">
+              Tingsek
+            </Link>
+            ,{' '}
+            <Link to="https://www.carola.com/" target="_blank" rel="noreferrer">
+              Carola
+            </Link>
+            ,{' '}
+            <Link
+              to="https://www.allenstone.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Allen Stone
+            </Link>
+            ,{' '}
+            <Link to="https://www.timbuk.nu/" target="_blank" rel="noreferrer">
+              Timbuktu
+            </Link>
+            ,{' '}
+            <Link
+              to="https://loreenofficial.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Loreen
+            </Link>
+            ,{' '}
+            <Link
+              to="https://www.sam-ryder.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Sam Ryder
+            </Link>
+            ,{' '}
+            <Link
+              to="https://www.facebook.com/heltoffline/?fbclid=IwAR1eEgeuV60Swc4ZzDfwkWL-ZwlAKetLLl8dVItmYIdqbDPTBI7MFvLVpIU/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Helt Off
+            </Link>{' '}
+            and many more.
           </p>
           <p>
             Influences include Keith Jarrett, Brad Mehldau, Marvin Gaye, Frank

@@ -69,7 +69,7 @@ const Navbar = ({ open, setOpen, logoPIsVisible, setLogoPIsVisible }) => {
         <LogoP style={logoPIsVisible ? { opacity: 1 } : { opacity: 0 }}>
           Pianist, Singer, Songwriter and Developer
         </LogoP>
-        <NavMenu open={window.innerWidth <= 768 && open}>
+        <NavMenu open={window.innerWidth <= 855 && open}>
           <ul>{menuMarkup}</ul>
         </NavMenu>
       </Nav>

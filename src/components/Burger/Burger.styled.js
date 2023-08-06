@@ -4,11 +4,11 @@ import styled from 'styled-components';
 export const StyledBurger = styled.button`
   display: none;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 855px) {
+    display: flex;
     position: fixed;
     top: 24px;
     right: 1.5rem;
-    display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 2rem;

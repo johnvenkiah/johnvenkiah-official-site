@@ -99,6 +99,9 @@ export const ModalHeadingWrapper = styled.div`
   font-size: 1.8rem;
   border-radius: 12px;
   border: #77777766 0.1rem solid;
+  @media screen and (min-width: 1440px) {
+    padding: 25px;
+  }
 
   div {
     max-width: 58%;

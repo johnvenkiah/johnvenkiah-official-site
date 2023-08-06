@@ -4,6 +4,7 @@ import portfFeelgood from '../../images/portfolio/portf_feelgood.jpg';
 import portfInstru from '../../images/portfolio/portf_instru.jpg';
 import portfStepUp from '../../images/portfolio/portf_stepup.jpeg';
 import portfVenkiah from '../../images/portfolio/portf_venkiah.jpg';
+import musicalMinds from '../../images/portfolio/portf_musical_minds.jpg';
 import {
   PortfolioContainer,
   PortfolioImage,
@@ -30,6 +31,13 @@ const Portfolio = () => {
       url: 'https://stepup-shoes.onrender.com',
       img: portfStepUp,
       descr: 'Fictional online shoestore built with Django and Stripe',
+    },
+    {
+      title: 'Musical Minds',
+      url: 'https://johnvenkiah.github.io/CI_MS2_John_Venkiah',
+      img: musicalMinds,
+      descr:
+        'Music theory and learning for beginners, built with vanilla JavaScript',
     },
     {
       title: 'Instru-mental',

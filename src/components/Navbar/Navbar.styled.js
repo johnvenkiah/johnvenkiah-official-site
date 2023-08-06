@@ -30,7 +30,7 @@ export const NavMenu = styled.div`
   justify-content: end;
   white-space: nowrap;
   width: 100vw;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 855px) {
     backdrop-filter: blur(10px);
     background-color: rgba(38, 50, 50, 0.5);
     height: 100vh;
@@ -42,7 +42,7 @@ export const NavMenu = styled.div`
     flex-direction: column;
     justify-content: center;
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 855px) {
     padding-top: 45px;
     padding-bottom: 40px;
   }
@@ -52,7 +52,7 @@ export const NavMenu = styled.div`
     list-style-type: none;
     height: 100%;
     padding: 1rem 0;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 855px) {
       flex-direction: column;
       justify-content: space-evenly;
     }

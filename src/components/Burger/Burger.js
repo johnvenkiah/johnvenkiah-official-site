@@ -5,13 +5,13 @@ import { StyledBurger } from './Burger.styled';
 
 const Burger = ({ open, setOpen }) => {
   useEffect(() => {
-    if (open && window.innerWidth <= 768) {
+    if (open && window.innerWidth <= 855) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'auto';
     }
   }, [open]);
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > 855) {
     return null;
   }
   return (
