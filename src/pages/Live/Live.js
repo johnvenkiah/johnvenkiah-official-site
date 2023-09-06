@@ -55,41 +55,44 @@ export default function Live() {
   }, []);
 
   const { events } = calState;
-  let eventsList = events.map(function (event) {
-    if (event.description) {
-      let descr = event.description;
-      descr = descr.slice(descr.lastIndexOf('https:'));
-      descr = descr.replace('</u>', '');
-      descr = descr.replace('</a>', '');
+  let eventsList = [];
+  if (events.length > 0) {
+    eventsList = events.map(function (event) {
+      if (event.description) {
+        let descr = event.description;
+        descr = descr.slice(descr.lastIndexOf('https:'));
+        descr = descr.replace('</u>', '');
+        descr = descr.replace('</a>', '');
 
-      return (
-        <ListGroupLink
-          key={event.id}
-          href={descr}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <EventSpan>
-            {moment(event.start.dateTime).format('D.M.Y')}
-            {isDesktopOrLaptop && ' - '}
-          </EventSpan>
-          <EventSpanBold>{event.summary}</EventSpanBold>
-          <EventSpan>{event.location}</EventSpan>
-        </ListGroupLink>
-      );
-    } else {
-      return (
-        <ListGroupP key={event.id}>
-          <EventSpan>
-            {moment(event.start.dateTime).format('D/M-Y')}
-            {isDesktopOrLaptop && ' - '}
-          </EventSpan>
-          <EventSpanBold>{event.summary}</EventSpanBold>
-          <EventSpan>{event.location}</EventSpan>
-        </ListGroupP>
-      );
-    }
-  });
+        return (
+          <ListGroupLink
+            key={event.id}
+            href={descr}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <EventSpan>
+              {moment(event.start.dateTime).format('D.M.Y')}
+              {isDesktopOrLaptop && ' - '}
+            </EventSpan>
+            <EventSpanBold>{event.summary}</EventSpanBold>
+            <EventSpan>{event.location}</EventSpan>
+          </ListGroupLink>
+        );
+      } else {
+        return (
+          <ListGroupP key={event.id}>
+            <EventSpan>
+              {moment(event.start.dateTime).format('D/M-Y')}
+              {isDesktopOrLaptop && ' - '}
+            </EventSpan>
+            <EventSpanBold>{event.summary}</EventSpanBold>
+            <EventSpan>{event.location}</EventSpan>
+          </ListGroupP>
+        );
+      }
+    });
+  }
 
   let emptyState = (
     <EmptyOrLoading>
