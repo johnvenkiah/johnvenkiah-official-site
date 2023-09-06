@@ -126,8 +126,8 @@ export default function Live() {
     <Concerts style={consertsStyle}>
       <ListGroup>
         {calState.isLoading && loadingState}
-        {page === '/live' && events.length > 0 && eventsList}
-        {page === '/' && events.length > 0 && eventsList.slice(0, 3)}
+        {page === '/live' && events && events.length > 0 && eventsList}
+        {page === '/' && events && events.length > 0 && eventsList.slice(0, 3)}
         {calState.isEmpty && emptyState}
       </ListGroup>
     </Concerts>
