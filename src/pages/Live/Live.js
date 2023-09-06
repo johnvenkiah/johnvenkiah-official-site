@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import moment from 'moment';
 import momentDurationFormatSetup from 'moment-duration-format';
 import { useMediaQuery } from 'react-responsive';
@@ -100,8 +100,8 @@ export default function Live() {
     <EmptyOrLoading>
       <h3>No gigs currently in my calendar.</h3>
       <p>
-        We are updating it continuously, so it may currently be under
-        maintenance. Please contact me if you have any queries.
+        This page is updated regularly so be sure to stop by again soon, or
+        <Link to={'/contact'}>get in touch</Link> if you have any queries.
       </p>
     </EmptyOrLoading>
   );
