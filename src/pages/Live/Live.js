@@ -56,7 +56,7 @@ export default function Live() {
 
   const { events } = calState;
   let eventsList = [];
-  if (events.length > 0) {
+  if (events && events.length > 0) {
     eventsList = events.map(function (event) {
       if (event.description) {
         let descr = event.description;
@@ -92,6 +92,8 @@ export default function Live() {
         );
       }
     });
+  } else {
+    calState.isEmpty = true;
   }
 
   let emptyState = (
