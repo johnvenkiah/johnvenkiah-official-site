@@ -92,8 +92,6 @@ export default function Live() {
         );
       }
     });
-  } else {
-    calState.isEmpty = true;
   }
 
   let emptyState = (
