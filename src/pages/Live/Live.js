@@ -29,7 +29,7 @@ export default function Live() {
 
   useEffect(() => {
     const getEvents = () => {
-      fetch('https://gigs-be.onrender.com/events')
+      fetch('/.netlify/functions/events?endpoint=events') // Update the URL
         // fetch('http://localhost:3001/events')
         .then((response) => response.json())
         .then((data) => {
