@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { BackgroundImg } from './Background.styled';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -25,47 +25,57 @@ const Background = () => {
   }
 
   const [isLoaded, setIsLoaded] = useState(false);
-  const [currentBackground, setCurrentBackground] = useState(null);
 
-  useEffect(() => {
-    const backgroundImages = {
-      '/': johnMopa,
-      '/music': hands,
-      '/videos': playingRearShirt,
-      '/live': johnFolkRock,
-      '/developer': blackClav,
-      '/about': soloRear,
-      '/contact': soloProfile,
-    };
+  const handleImageLoad = () => {
+    setIsLoaded(true);
+  };
 
-    const img = new Image();
-    img.src = backgroundImages[pathname];
-    img.onload = () => {
-      setIsLoaded(true);
-      setCurrentBackground(backgroundImages[pathname]);
-    };
-  }, [johnFolkRock, johnMopa, pathname]);
+  const backgroundImages = {
+    '/': johnMopa,
+    '/music': hands,
+    '/videos': playingRearShirt,
+    '/live': johnFolkRock,
+    '/developer': blackClav,
+    '/about': soloRear,
+    '/contact': soloProfile,
+  };
+
+  const style = {
+    boxShadow: 'inset 0 0 50px #000',
+  };
+
+  const loadingBGStyle = {
+    background: `linear-gradient(transparent, black 95%)
+  no-repeat center center/cover`,
+  };
 
   const loadedBGStyle = {
-    backgroundImage: `linear-gradient(transparent, black 95%), url(${currentBackground})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center center',
-    backgroundSize: 'cover',
-    opacity: isLoaded ? 1 : 0,
-    transition: 'opacity 0.8s ease',
+    background: `linear-gradient(transparent, black 95%), url(${backgroundImages[pathname]})
+  no-repeat center center/cover`,
   };
 
   return (
-    <motion.div
-      style={loadedBGStyle}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.8, ease: [0.4, 0.25, 0.8, 1] }}
-      key={`${pathname}-${Date.now()}`}
-    >
-      <BackgroundImg style={loadedBGStyle} key={pathname} />
-    </motion.div>
+    <>
+      <motion.div
+        style={style}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.8, ease: [0.17, 0.67, 0.83, 0.67] }}
+        key={pathname}
+      >
+        <BackgroundImg
+          style={!isLoaded ? loadingBGStyle : loadedBGStyle}
+          key={pathname}
+        />
+        <img
+          src={backgroundImages[pathname]}
+          alt="Background"
+          style={{ display: 'none' }}
+          onLoad={handleImageLoad}
+        />
+      </motion.div>
+    </>
   );
 };
 
