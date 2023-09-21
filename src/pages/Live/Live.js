@@ -126,6 +126,7 @@ export default function Live() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
         transition={{ duration: 0.8, ease: [0.17, 0.67, 0.83, 0.67] }}
         key={`live-component-${calState.isLoading}-${calState.events}-${calState.isEmpty}`}
       >

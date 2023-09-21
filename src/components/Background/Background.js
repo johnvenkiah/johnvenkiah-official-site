@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { BackgroundImg } from './Background.styled';
 import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -26,9 +26,9 @@ const Background = () => {
 
   const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => {
+  const handleImageLoad = () => {
     setIsLoaded(true);
-  }, []);
+  };
 
   const backgroundImages = {
     '/': johnMopa,
@@ -48,6 +48,7 @@ const Background = () => {
     background: `linear-gradient(transparent, black 95%)
   no-repeat center center/cover`,
   };
+
   const loadedBGStyle = {
     background: `linear-gradient(transparent, black 95%), url(${backgroundImages[pathname]})
   no-repeat center center/cover`,
@@ -59,12 +60,19 @@ const Background = () => {
         style={style}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
         transition={{ duration: 0.8, ease: [0.17, 0.67, 0.83, 0.67] }}
         key={pathname}
       >
         <BackgroundImg
           style={!isLoaded ? loadingBGStyle : loadedBGStyle}
           key={pathname}
+        />
+        <img
+          src={backgroundImages[pathname]}
+          alt="Background"
+          style={{ display: 'none' }}
+          onLoad={handleImageLoad}
         />
       </motion.div>
     </>
