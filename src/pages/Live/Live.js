@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import moment from 'moment';
+import { motion } from 'framer-motion';
 import momentDurationFormatSetup from 'moment-duration-format';
 import { useMediaQuery } from 'react-responsive';
 import { Oval } from 'react-loading-icons';
@@ -122,12 +123,22 @@ export default function Live() {
 
   return (
     <Concerts style={consertsStyle}>
-      <ListGroup>
-        {calState.isLoading && loadingState}
-        {page === '/live' && events && events.length > 0 && eventsList}
-        {page === '/' && events && events.length > 0 && eventsList.slice(0, 3)}
-        {calState.isEmpty && emptyState}
-      </ListGroup>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, ease: [0.17, 0.67, 0.83, 0.67] }}
+        key={`live-component-${calState.isLoading}-${calState.events}-${calState.isEmpty}`}
+      >
+        <ListGroup>
+          {calState.isLoading && loadingState}
+          {page === '/live' && events && events.length > 0 && eventsList}
+          {page === '/' &&
+            events &&
+            events.length > 0 &&
+            eventsList.slice(0, 3)}
+          {calState.isEmpty && emptyState}
+        </ListGroup>
+      </motion.div>
     </Concerts>
   );
 }
