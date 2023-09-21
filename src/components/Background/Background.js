@@ -28,23 +28,23 @@ const Background = () => {
   const [currentBackground, setCurrentBackground] = useState(null);
 
   useEffect(() => {
+    const backgroundImages = {
+      '/': johnMopa,
+      '/music': hands,
+      '/videos': playingRearShirt,
+      '/live': johnFolkRock,
+      '/developer': blackClav,
+      '/about': soloRear,
+      '/contact': soloProfile,
+    };
+
     const img = new Image();
     img.src = backgroundImages[pathname];
     img.onload = () => {
       setIsLoaded(true);
       setCurrentBackground(backgroundImages[pathname]);
     };
-  }, [pathname]);
-
-  const backgroundImages = {
-    '/': johnMopa,
-    '/music': hands,
-    '/videos': playingRearShirt,
-    '/live': johnFolkRock,
-    '/developer': blackClav,
-    '/about': soloRear,
-    '/contact': soloProfile,
-  };
+  }, [johnFolkRock, johnMopa, pathname]);
 
   const loadedBGStyle = {
     backgroundImage: `linear-gradient(transparent, black 95%), url(${currentBackground})`,
