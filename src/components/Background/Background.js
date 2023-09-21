@@ -62,7 +62,7 @@ const Background = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.8, ease: [0.4, 0.25, 0.8, 1] }}
-      key={pathname}
+      key={`${pathname}-${Date.now()}`}
     >
       <BackgroundImg style={loadedBGStyle} key={pathname} />
     </motion.div>
