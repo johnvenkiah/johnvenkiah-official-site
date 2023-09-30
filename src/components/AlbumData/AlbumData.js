@@ -18,8 +18,7 @@ const albumData = [
     apple_url: 'https://music.apple.com/us/album/latin-animal-beats/1679545427',
     tidal_url: 'https://tidal.com/browse/album/285802621',
     deezer_url: 'https://deezer.page.link/ZUEqoMfovCs78WsV6',
-    buy_link:
-      'https://www.havtornrecords.com/store/faela-latin-animal-beats-cd',
+    buy_link: 'https://www.faela-band.com/contact',
   },
   {
     id: 'standards',
