@@ -79,9 +79,9 @@ const Background = () => {
   };
 
   const motionDivProps = {
-    initial: { opacity: 0, scale: 1.01 },
-    animate: isLoaded ? { opacity: 1, scale: 1 } : {},
-    exit: { opacity: 0, scale: 1.1 },
+    initial: { opacity: 0 },
+    animate: isLoaded ? { opacity: 1 } : {},
+    exit: { opacity: 0 },
     transition: { duration: 0.8, ease: [0.73, 0.26, 0.39, 0.82] },
     key: pathname,
   };
@@ -92,7 +92,6 @@ const Background = () => {
         <BackgroundImg
           style={!isLoaded ? loadingBGStyle : loadedBGStyle}
           key={pathname}
-          alt="Background"
           onLoad={handleImageLoad}
         />
       </motion.div>
