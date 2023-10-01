@@ -67,6 +67,12 @@ export const ContactFormStyled = styled.div`
       }
     }
 
+    input:-webkit-autofill,
+    input:-webkit-autofill:focus {
+      -webkit-box-shadow: 0 0 0 1000px #1129 inset;
+      -webkit-text-fill-color: #fff;
+    }
+
     textarea {
       resize: none;
       height: 105px;
