@@ -66,6 +66,11 @@ const Background = () => {
 
   const style = {
     boxShadow: 'inset 0 0 50px #000',
+    position: 'fixed',
+    width: '100%',
+    height: '100%',
+    top: 0,
+    left: 0,
   };
 
   const loadingBGStyle = {
@@ -79,10 +84,10 @@ const Background = () => {
   };
 
   const motionDivProps = {
-    initial: { opacity: 0, scale: 1.01 },
-    animate: isLoaded ? { opacity: 1, scale: 1.005 } : {},
-    exit: { opacity: 0, scale: 1.1 },
-    transition: { duration: 0.8, ease: [0.73, 0.26, 0.39, 0.82] },
+    initial: { opacity: 0, scale: 1 },
+    animate: isLoaded ? { opacity: 1, scale: 1.02 } : {},
+    exit: { opacity: 0, scale: 1 },
+    transition: { duration: 0.9, ease: [0.73, 0.26, 0.39, 0.82] },
     key: pathname,
   };
 

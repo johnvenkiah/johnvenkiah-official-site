@@ -8,9 +8,6 @@ import {
   ContactFormStyled as Form,
   SuccessP,
 } from './ContactForm.styled';
-import pressEnJvt from '../../files/press_en_jvt_2023.pdf';
-import pressSvJvt from '../../files/press_sv_jvt_2023.pdf';
-import { Link } from 'react-router-dom';
 
 export default function ContactForm() {
   const [state, setState] = useState({
@@ -68,6 +65,21 @@ export default function ContactForm() {
     setState({
       ...state,
       [name]: value,
+    });
+  };
+
+  const onDownloadClick = (pdf, string) => {
+    // using Java Script method to get PDF file
+    fetch(pdf).then((response) => {
+      response.blob().then((blob) => {
+        // Creating new object of PDF file
+        const fileURL = window.URL.createObjectURL(blob);
+        // Setting various property values
+        let alink = document.createElement('a');
+        alink.href = fileURL;
+        alink.download = string;
+        alink.click();
+      });
     });
   };
 
@@ -136,21 +148,26 @@ export default function ContactForm() {
 
       <h3>Download Press-PDF John Venkiah Trio, On to Something Good</h3>
       <ButtonContainer>
-        <Link
-          to={pressEnJvt}
-          target="_blank"
-          rel="noreferrer"
-          download="John Venkiah Trio, on to Something Good - Press PDF (EN)"
+        <button
+          onClick={() =>
+            onDownloadClick(
+              'press_en_jvt_2023.pdf',
+              'John Venkiah Trio, on to Something Good - Press PDF (EN)'
+            )
+          }
         >
           English
-        </Link>
-        <Link
-          to={pressSvJvt}
-          target="_blank"
-          download="John Venkiah Trio, on to Something Good - Press PDF (SV)"
+        </button>
+        <button
+          onClick={() =>
+            onDownloadClick(
+              'press_sv_jvt_2023.pdf',
+              'John Venkiah Trio, on to Something Good - Press PDF (SV)'
+            )
+          }
         >
           Swedish
-        </Link>
+        </button>
       </ButtonContainer>
     </ContactWrapper>
   );

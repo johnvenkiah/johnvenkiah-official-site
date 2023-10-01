@@ -172,9 +172,9 @@ export const ButtonContainer = styled.div`
   align-items: center;
   margin: 3% auto 5%;
   flex-wrap: wrap;
-  width: 90%;
+  width: 95%;
   max-width: 600px;
-  a {
+  button {
     width: 45%;
     margin: 2%;
     color: #fff;
