@@ -18,7 +18,7 @@ exports.handler = async (event, context) => {
     queryStringParameters.endpoint === 'send'
   ) {
     try {
-      const requestData = JSON.parse(event.body);
+      const requestData = JSON.stringify(event.body);
       const mailOptions = {
         from: requestData.email, // sender address
         to: process.env.EMAIL, // list of receivers
