@@ -28,7 +28,7 @@ export default function ContactForm() {
       });
     } else {
       axios
-        .post('/.netlify/functions/events', { ...state })
+        .post('/.netlify/functions/send?endpoint=send', { ...state })
         .then((response) => {
           setResult(response.data);
           setState({ name: '', email: '', subject: '', message: '' });
