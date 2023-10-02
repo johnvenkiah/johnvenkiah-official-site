@@ -18,18 +18,18 @@ exports.handler = async (event, context) => {
     queryStringParameters.endpoint === 'send'
   ) {
     try {
-      const requestData = JSON.stringify(event.body);
+      const requestData = JSON.parse(event.body);
       const mailOptions = {
         from: requestData.email, // sender address
         to: process.env.EMAIL, // list of receivers
         subject: `johnvenkiah.com - ${requestData.subject}`, // Subject line
         html: `
-    <h3>Contact Request From ${requestData.name}</h3>
-    <p><strong>From: </strong>${requestData.name} | ${requestData.email}</p>
-    <p><strong>Subject: </strong>johnvenkiah.com - ${requestData.subject}</li>
-    <h4>Message:</h4>
-    <p>${requestData.message}</p>
-    `,
+          <h3>Contact Request From ${requestData.name}</h3>
+          <p><strong>From: </strong>${requestData.name} | ${requestData.email}</p>
+          <p><strong>Subject: </strong>johnvenkiah.com - ${requestData.subject}</li>
+          <h4>Message:</h4>
+          <p>${requestData.message}</p>
+        `,
       };
 
       transporter.sendMail(mailOptions, function (err, info) {

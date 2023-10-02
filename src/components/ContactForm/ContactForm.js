@@ -28,7 +28,8 @@ export default function ContactForm() {
       });
     } else {
       axios
-        .post('/.netlify/functions/send?endpoint=send', { ...state })
+        // .post('/.netlify/functions/send?endpoint=send', { ...state })
+        .post('https://gigs-be.onrender.com/send', { ...state })
         .then((response) => {
           setResult(response.data);
           setState({ name: '', email: '', subject: '', message: '' });
