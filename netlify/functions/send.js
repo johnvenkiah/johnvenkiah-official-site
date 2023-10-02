@@ -19,7 +19,7 @@ exports.handler = async (event) => {
       subject: `johnvenkiah.com - ${body.subject}`, // Subject line
       html: `
         <h3>Contact Request From ${body.name}</h3>
-        <p><strong>From: </strong>${body.name} | ${body.email}</p>
+        <p><strong>From: </strong>${body.name} - ${body.email}</p>
         <p><strong>Subject: </strong>johnvenkiah.com - ${body.subject}</p>
         <h4>Message:</h4>
         <p>${body.message}</p>
@@ -32,7 +32,7 @@ exports.handler = async (event) => {
       statusCode: 200,
       body: JSON.stringify({
         success: true,
-        message: 'Email sent successfully',
+        message: "Thanks for writing, I'll get back to you soon!",
       }),
     };
   } catch (error) {

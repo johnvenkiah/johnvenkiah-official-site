@@ -29,7 +29,6 @@ export default function ContactForm() {
     } else {
       axios
         .post('/.netlify/functions/send', { ...state })
-        // .post('https://gigs-be.onrender.com/send', { ...state })
         .then((response) => {
           setResult(response.data);
           setState({ name: '', email: '', subject: '', message: '' });
