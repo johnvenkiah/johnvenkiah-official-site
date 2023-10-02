@@ -1,68 +1,48 @@
 const nodemailer = require('nodemailer');
 require('dotenv').config();
 
-const transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASSWORD,
-  },
-});
+exports.handler = async (event) => {
+  const body = JSON.parse(event.body);
 
-exports.handler = async (event, context) => {
-  const { httpMethod, queryStringParameters } = event;
+  try {
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        user: process.env.EMAIL,
+        pass: process.env.PASSWORD,
+      },
+    });
 
-  if (
-    httpMethod === 'POST' &&
-    queryStringParameters &&
-    queryStringParameters.endpoint === 'send'
-  ) {
-    try {
-      const requestData = JSON.parse(event.body);
-      const mailOptions = {
-        from: requestData.email, // sender address
-        to: process.env.EMAIL, // list of receivers
-        subject: `johnvenkiah.com - ${requestData.subject}`, // Subject line
-        html: `
-          <h3>Contact Request From ${requestData.name}</h3>
-          <p><strong>From: </strong>${requestData.name} | ${requestData.email}</p>
-          <p><strong>Subject: </strong>johnvenkiah.com - ${requestData.subject}</li>
-          <h4>Message:</h4>
-          <p>${requestData.message}</p>
-        `,
-      };
+    const mailOptions = {
+      from: body.email, // sender address
+      to: process.env.EMAIL, // list of receivers
+      subject: `johnvenkiah.com - ${body.subject}`, // Subject line
+      html: `
+        <h3>Contact Request From ${body.name}</h3>
+        <p><strong>From: </strong>${body.name} | ${body.email}</p>
+        <p><strong>Subject: </strong>johnvenkiah.com - ${body.subject}</p>
+        <h4>Message:</h4>
+        <p>${body.message}</p>
+      `,
+    };
 
-      transporter.sendMail(mailOptions, function (err, info) {
-        if (err) {
-          console.log(err);
-          return {
-            statusCode: 500,
-            body: JSON.stringify({
-              success: false,
-              message: 'Something went wrong. Try again later',
-            }),
-          };
-        } else {
-          return {
-            statusCode: 200,
-            body: JSON.stringify({
-              success: true,
-              message: "Thanks for writing, I'll get back to you soon!",
-            }),
-          };
-        }
-      });
-    } catch (error) {
-      console.error(error);
-      return {
-        statusCode: 500,
-        body: JSON.stringify({ message: 'Email sending failed' }),
-      };
-    }
-  } else {
+    await transporter.sendMail(mailOptions);
+
     return {
-      statusCode: 404,
-      body: JSON.stringify({ message: 'Not Found' }),
+      statusCode: 200,
+      body: JSON.stringify({
+        success: true,
+        message: 'Email sent successfully',
+      }),
+    };
+  } catch (error) {
+    console.error(error);
+    return {
+      statusCode: 500,
+      body: JSON.stringify({
+        success: false,
+        message: 'Something went wrong. Try again later',
+      }),
     };
   }
 };
