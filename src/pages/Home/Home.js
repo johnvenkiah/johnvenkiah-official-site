@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { HomeStyled, RegularLink, SectionContainer } from './Home.styled';
+import { HomeStyled, SectionContainer } from './Home.styled';
 import Music from '../Music/Music';
 import Live from '../Live/Live';
 
@@ -11,11 +11,7 @@ export default function Home({ modalOpen, setModalOpen }) {
       <h2>Latest Releases</h2>
       <Music modalOpen={modalOpen} setModalOpen={setModalOpen} />
       <SectionContainer>
-        <h2>Upcoming Performances</h2>
         <Live />
-        <RegularLink to="/live" rel="noreferrer">
-          See All Performances
-        </RegularLink>
       </SectionContainer>
     </HomeStyled>
   );

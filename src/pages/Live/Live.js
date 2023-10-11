@@ -13,6 +13,7 @@ import {
   EmptyOrLoading,
   EventSpan,
   EventSpanBold,
+  RegularLink,
 } from './Live.styled';
 momentDurationFormatSetup(moment);
 
@@ -107,10 +108,7 @@ export default function Live() {
 
   let loadingState = (
     <EmptyOrLoading>
-      <h4>
-        Loading dates. This might take a few secs the first time you load the
-        page.
-      </h4>
+      <h4>Loading dates...</h4>
       <Oval />
     </EmptyOrLoading>
   );
@@ -121,8 +119,15 @@ export default function Live() {
     };
   }
 
+  let HomeLiveLink = (
+    <RegularLink to="/live" rel="noreferrer">
+      See All Performances
+    </RegularLink>
+  );
+
   return (
     <Concerts style={consertsStyle}>
+      <h2>Upcoming Performances</h2>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -140,6 +145,7 @@ export default function Live() {
           {calState.isEmpty && emptyState}
         </ListGroup>
       </motion.div>
+      {page === '/' && events && events.length > 0 && HomeLiveLink}
     </Concerts>
   );
 }

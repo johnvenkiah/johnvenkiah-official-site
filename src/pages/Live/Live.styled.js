@@ -1,6 +1,12 @@
 import styled from 'styled-components';
+import { NavLink as Link } from 'react-router-dom';
 
 export const Concerts = styled.div`
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   p {
     display: block;
     padding: 7px;
@@ -10,6 +16,9 @@ export const Concerts = styled.div`
     span {
       text-align: center;
     }
+  }
+  h2 {
+    text-align: center;
   }
 `;
 
@@ -76,4 +85,26 @@ export const EmptyOrLoading = styled.div`
   display: block;
   padding: 7px;
   text-align: center;
+`;
+
+export const RegularLink = styled(Link)`
+  cursor: pointer;
+  margin: 1rem auto 3rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  transition: all 0.2s ease-in-out;
+  transform: scale(1);
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.02);
+      text-shadow: 0 0 10px #ffb337;
+    }
+  }
+  @media (hover: none) {
+    &:active {
+      transform: scale(1.02);
+      text-shadow: 0 0 10px #ffb337;
+    }
+  }
 `;
