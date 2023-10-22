@@ -20,6 +20,7 @@ import About from './pages/About/about.js';
 import Contact from './pages/contact';
 import Developer from './pages/developer';
 import Footer from './components/Footer/Footer';
+import PageNotFound from './pages/PageNotFound/PageNotFound';
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -104,6 +105,7 @@ function App() {
                 <Route path="/developer" element={<Developer />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="*" element={<PageNotFound />} />
               </Routes>
               <ScrollElement onClick={() => ScrollHandler(0)}>
                 <IoIosArrowUp />
