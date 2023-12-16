@@ -128,6 +128,6 @@ export const SectionWrapperRow = styled.div`
     padding: 0;
   }
   div {
-    margin: 1rem 0;
+    margin: 1rem 0 !important;
   }
 `;
