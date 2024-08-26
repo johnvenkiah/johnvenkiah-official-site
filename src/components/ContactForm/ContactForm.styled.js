@@ -7,7 +7,6 @@ export const ContactWrapper = styled.div`
   justify-content: start;
   @media screen and (min-width: 1024px) {
     justify-content: end;
-    height: 75vh;
   }
   h3 {
     text-align: center;
