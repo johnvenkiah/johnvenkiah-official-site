@@ -48,14 +48,17 @@ export const AlbumWrapper = styled.div`
 `;
 
 export const AlbumImg = styled.img`
-  width: 40vh;
+  width: 35vh;
   box-shadow: 0 0 15px #000;
   transition: transform 0.3s ease-in-out;
   &:hover {
     transform: scale(1.03);
     cursor: pointer;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 512px) {
+    width: 20vh;
+  }
+  @media screen and (min-width: 1024px) {
     width: 30vh;
   }
 `;

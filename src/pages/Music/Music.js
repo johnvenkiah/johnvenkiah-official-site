@@ -28,7 +28,7 @@ export default function Music({ modalOpen, setModalOpen }) {
   const currPage = useLocation().pathname;
   let currAlbumData = [];
   currPage === '/'
-    ? (currAlbumData = albumData.slice(0, 3))
+    ? (currAlbumData = albumData.slice(0, 4))
     : (currAlbumData = albumData);
 
   const deezerSvg = (
@@ -130,7 +130,7 @@ export default function Music({ modalOpen, setModalOpen }) {
               {modalOpen &&
                 setModalContent(
                   currAlbumData,
-                  currAlbumData.findIndex((p) => p.id === modalState.id)
+                  currAlbumData.findIndex((p) => p.id === modalState.id),
                 )}
             </>
           }

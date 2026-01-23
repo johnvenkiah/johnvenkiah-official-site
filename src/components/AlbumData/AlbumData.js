@@ -6,12 +6,41 @@ import iJustCant from '../../images/venkiah-i-just-cant.jpeg';
 import kaalm from '../../images/kaalm.jpg';
 import jvt2_small from '../../images/jvt2-small.png';
 import tingsek_ljupet from '../../images/tingsek-ljupet.jpg';
+import cover_wwnba_small from '../../images/cover_wwnba_small.jpeg';
+import cover_aiwiy from '../../images/cover_aiwiy.jpg';
 
 const albumData = [
   {
+    id: 'venkiah_wwnba',
+    img_url: cover_wwnba_small,
+    alt_attr: 'Single Cover: Venkiah - "We Will Never Be Alone"',
+    title: 'Venkiah - We Will Never Be Alone (2026)',
+    spotify_url:
+      'https://open.spotify.com/album/7HvBw1GViJiEWU4TWZDBz6?si=MC6eC9ICSiqovV1mEJ4Mbw',
+    apple_url:
+      'https://music.apple.com/se/song/we-will-never-be-alone/1865164800',
+    tidal_url: 'https://tidal.com/track/485610310',
+    deezer_url: 'https://link.deezer.com/s/32fxYY78EFlJB7d8kWpjk',
+    buy_link:
+      'https://music.apple.com/se/album/we-will-never-be-alone-single/1865164799?l=en-GB',
+  },
+  {
+    id: 'venkiah_aiwiy',
+    img_url: cover_aiwiy,
+    alt_attr: 'Single Cover: Venkiah - "All I Want Is You"',
+    title: 'Venkiah - All I Want Is You (2025)',
+    spotify_url:
+      'https://open.spotify.com/track/04hPL6Qa9xdpptBFutBxHn?si=1e9c82b9cfb24288',
+    apple_url: 'https://music.apple.com/se/song/all-i-want-is-you/1852623777',
+    tidal_url: 'https://tidal.com/track/472547504',
+    deezer_url: 'https://link.deezer.com/s/32fy7LXHpO1lbge0nFKPu',
+    buy_link:
+      'https://music.apple.com/se/album/all-i-want-is-you-single/1852623776?l=en-GB',
+  },
+  {
     id: 'latin_animal_beats',
     img_url: faelaLab,
-    alt_attr: 'Faela Latin Animal Beats Cover',
+    alt_attr: 'Album Cover: Faela - "Latin Animal Beats"',
     title: 'Faela - Latin Animal Beats (2023)',
     spotify_url:
       'https://open.spotify.com/album/0mwzwuxBWgSku8TAt4MDNf?si=MAdyp3EqS426pvJr0m8UNA',

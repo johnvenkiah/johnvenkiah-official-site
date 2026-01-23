@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const HomeStyled = styled.div`
   display: flex;
@@ -14,4 +15,19 @@ export const SectionContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+`;
+
+export const LinkBold = styled(Link)`
+  cursor: pointer;
+  margin: 1rem auto;
+  text-align: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  transition: all 0.2s ease-in-out;
+  transform: scale(1);
+  &:hover {
+    transform: scale(1.5);
+    text-shadow: 0 0 10px #ffb337;
+  }
 `;
