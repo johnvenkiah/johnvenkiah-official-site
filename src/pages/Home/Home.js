@@ -3,7 +3,7 @@ import { LinkBold, HomeStyled, SectionContainer } from './Home.styled';
 import Music from '../Music/Music';
 import Live from '../Live/Live';
 import LandingModal from './LandingModal';
-import ifsgCover from '../../images/ifsg_cover.png';
+import ifsgCover from '../../images/ifsg_cover.png'; // Import the cover art image
 
 // Assuming modalOpen for the Music component is handled by a parent component
 export default function Home({ modalOpen, setModalOpen }) {

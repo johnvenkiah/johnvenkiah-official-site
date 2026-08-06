@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { ModalContainer } from '../../components/Modal/Modal.styled';
-import { ModalStyled } from '../../components/Modal/Modal.styled';
 
 export const LandingModalContainer = styled(ModalContainer)`
   width: 50%; /* Overrides the 30% width */
