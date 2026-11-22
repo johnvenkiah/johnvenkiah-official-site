@@ -28,7 +28,7 @@ const LandingModal = ({
           <a href={linkData.url} target="_blank" rel="noopener noreferrer">
             <CoverArtImage
               src={coverArt}
-              alt="It Feels So Good Cover Art"
+              alt="Eden For A Week Cover Art"
               onLoad={() => setImageLoaded(true)}
             />
 

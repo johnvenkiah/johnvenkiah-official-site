@@ -8,8 +8,35 @@ import jvt2_small from '../../images/jvt2-small.png';
 import tingsek_ljupet from '../../images/tingsek-ljupet.jpg';
 import cover_wwnba_small from '../../images/cover_wwnba_small.jpeg';
 import cover_aiwiy from '../../images/cover_aiwiy.jpg';
+import ifsgCover from '../../images/ifsg_cover.png';
+import noitesCover from '../../images/noites_cover.webp';
 
 const albumData = [
+  {
+    id: 'venkiah_ifsg',
+    img_url: ifsgCover,
+    alt_attr: 'Single Cover: Venkiah - "It Feels So Good"',
+    title: 'Venkiah - It Feels So Good (2026)',
+    spotify_url: 'https://open.spotify.com/album/7nvTQ9Pz3UsdzNhSb54tYr',
+    apple_url:
+      'https://music.apple.com/us/album/it-feels-so-good-single/6791006538',
+    tidal_url: 'https://tidal.com/track/543156013/u',
+    deezer_url: 'https://link.deezer.com/s/352fr27oMoXtSIj2IAx30',
+    buy_link:
+      'https://music.apple.com/se/album/it-feels-so-good-single/6791006538?l=en-GB',
+  },
+  {
+    id: 'faela_noites',
+    img_url: noitesCover,
+    alt_attr: 'Album Cover: Faela - "Noites Na Mureira"',
+    title: 'Faela - "Noites Na Mureira" (2026)',
+    spotify_url: 'https://open.spotify.com/album/7nvTQ9Pz3UsdzNhSb54tYr',
+    apple_url: 'https://music.apple.com/us/album/noites-na-murdeira/1876875355',
+    tidal_url: 'https://tidal.com/album/noites-na-murdeira/498474346',
+    deezer_url: 'https://link.deezer.com/s/352fzE39H92bkyRdnKM7Y',
+    buy_link:
+      'https://music.apple.com/se/album/noites-na-murdeira/1876875355?l=en-GB',
+  },
   {
     id: 'venkiah_wwnba',
     img_url: cover_wwnba_small,
