@@ -3,9 +3,9 @@ import { ModalContainer } from '../../components/Modal/Modal.styled';
 
 export const LandingModalContainer = styled(ModalContainer)`
   width: 50%; /* Overrides the 30% width */
-  height: 60vh;
+  height: 50vh;
   min-height: 400px;
-  max-width: 800px; /* Prevents it from getting too absurdly wide on huge screens */
+  max-width: 600px; /* Prevents it from getting too absurdly wide on huge screens */
 
   /* Flexbox adjustments to stack the image and button vertically */
   flex-direction: column;
@@ -22,6 +22,12 @@ export const LandingModalContainer = styled(ModalContainer)`
     text-align: center;
   }
   div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     transition: all 0.3s ease-in-out;
     @media (hover: hover) {
       &:hover {
