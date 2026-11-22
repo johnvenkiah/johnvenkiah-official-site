@@ -3,7 +3,7 @@ import { LinkBold, HomeStyled, SectionContainer } from './Home.styled';
 import Music from '../Music/Music';
 import Live from '../Live/Live';
 import LandingModal from './LandingModal';
-import ifsgCover from '../../images/ifsg_cover.png'; // Import the cover art image
+import efawCover from '../../images/efawCover.jpg'; // Import the cover art image
 
 // Assuming modalOpen for the Music component is handled by a parent component
 export default function Home({ modalOpen, setModalOpen }) {
@@ -27,8 +27,8 @@ export default function Home({ modalOpen, setModalOpen }) {
     }
 
     setLinkData({
-      url: 'https://open.spotify.com/album/7nvTQ9Pz3UsdzNhSb54tYr', // Placeholder for the actual Spotify link once generated
-      text: 'Listen to "It Feels So Good" on Spotify',
+      url: 'https://distrokid.com/hyperfollow/venkiah/eden-for-a-week',
+      text: 'Presave "Eden For A Week"',
     });
   }, []); // Empty dependency array ensures this runs once when the component mounts
 
@@ -42,7 +42,7 @@ export default function Home({ modalOpen, setModalOpen }) {
         setLandingModalOpen={setLandingModalOpen}
         linkData={linkData}
         // Import your cover art at the top of the file and pass it here
-        coverArt={ifsgCover}
+        coverArt={efawCover}
       />
 
       <Music modalOpen={modalOpen} setModalOpen={setModalOpen} />

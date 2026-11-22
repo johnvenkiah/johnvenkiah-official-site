@@ -24,7 +24,7 @@ const LandingModal = ({
           <IoMdClose style={closeButtonStyle} />
         </button>
         <div>
-          <h2>New single OUT NOW</h2>
+          <h2>New single out Dec 11th - PRESAVE NOW:</h2>
           <a href={linkData.url} target="_blank" rel="noopener noreferrer">
             <CoverArtImage
               src={coverArt}
